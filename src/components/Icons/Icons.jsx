@@ -65,7 +65,7 @@ export function IconChurch(props) {
   );
 }
 
-/** Garden party / evening — pairs with “The Celebration” event card */
+/** Garden party / evening; pairs with “The Celebration” event card */
 export function IconCelebration(props) {
   return (
     <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" {...props}>

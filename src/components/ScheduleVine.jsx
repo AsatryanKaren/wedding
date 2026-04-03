@@ -1,7 +1,7 @@
 import { useId } from "react";
 
 /**
- * Soft S-curve “vine” for the schedule — reads as botanical / ceremonial, not a rigid timeline.
+ * Soft S-curve “vine” for the schedule; reads as botanical / ceremonial, not a rigid timeline.
  */
 export function ScheduleVine({ className }) {
   const uid = useId().replace(/:/g, "");

@@ -1,7 +1,7 @@
 import styles from "./FamilyTreeVisual.module.css";
 
 /**
- * Stylized tree: two stems joining into one trunk, shared roots, one canopy —
+ * Stylized tree: two stems joining into one trunk, shared roots, one canopy,
  * metaphor for two families growing together.
  */
 export function FamilyTreeVisual() {

@@ -16,7 +16,7 @@ const WEDDING_DAY_SCHEDULE = [
     time: "14:00",
     datetime: "2026-06-24T14:00:00",
     title: "Ceremony",
-    place: "Saint Anna Church — Abovyan St, Yerevan",
+    place: "Saint Anna Church, Abovyan St, Yerevan",
     detail: "We exchange our vows surrounded by family and friends. Please silence phones and enjoy the moment with us.",
     tag: "Vows",
   },
@@ -32,7 +32,7 @@ const WEDDING_DAY_SCHEDULE = [
     time: "17:00",
     datetime: "2026-06-24T17:00:00",
     title: "Guest arrival at the venue",
-    place: "Art Village Armenia — Ashtarak",
+    place: "Art Village Armenia, Ashtarak",
     detail: "Welcome drinks, find your table, and settle in among the gardens before the evening unfolds.",
     tag: "Arrival",
   },
@@ -40,7 +40,7 @@ const WEDDING_DAY_SCHEDULE = [
     time: "17:30",
     datetime: "2026-06-24T17:30:00",
     title: "Cocktails & lemonade",
-    place: "Art Village — gardens & pavilion",
+    place: "Art Village, gardens & pavilion",
     detail: "Signature cocktails, fresh lemonade, and light bites while the space fills with conversation.",
     tag: "Reception",
   },
@@ -48,7 +48,7 @@ const WEDDING_DAY_SCHEDULE = [
     time: "18:00",
     datetime: "2026-06-24T18:00:00",
     title: "Dinner is served",
-    place: "Art Village — celebration spaces",
+    place: "Art Village, celebration spaces",
     detail: "Plated dinner, toasts from our nearest and dearest, and your chosen entrée.",
     tag: "Feast",
   },
@@ -57,7 +57,7 @@ const WEDDING_DAY_SCHEDULE = [
     datetime: "2026-06-24T19:30:00",
     title: "First dance",
     place: "Art Village Hall",
-    detail: "We open the dancing together under the lights — then the floor is yours.",
+    detail: "We open the dancing together under the lights, then the floor is yours.",
     tag: "Dance",
   },
   {
@@ -73,7 +73,7 @@ const WEDDING_DAY_SCHEDULE = [
     datetime: "2026-06-24T21:00:00",
     title: "Cake",
     place: "Art Village Hall",
-    detail: "Something sweet before the night carries on — join us for the cutting.",
+    detail: "Something sweet before the night carries on, join us for the cutting.",
     tag: "Cake",
   },
   {
@@ -81,7 +81,7 @@ const WEDDING_DAY_SCHEDULE = [
     datetime: "2026-06-24T22:30:00",
     title: "Sparkling toast",
     place: "Art Village",
-    detail: "A glass of something sparkling with everyone — cheers to you for being here.",
+    detail: "A glass of something sparkling with everyone, cheers to you for being here.",
     tag: "Toast",
   },
 ];
@@ -99,7 +99,7 @@ const ATTIRE_PALETTE_MEN = [
   { hex: "#1b3022", name: "Forest", hint: "Deep green or charcoal wool suits" },
   { hex: "#3d5244", name: "Moss", hint: "Olive & sage tailoring, textured jackets" },
   { hex: "#2a3540", name: "Midnight", hint: "Navy suit, crisp white or cream shirt" },
-  { hex: "#1a1a1a", name: "Black", hint: "Classic black suit or dinner jacket — always welcome" },
+  { hex: "#1a1a1a", name: "Black", hint: "Classic black suit or dinner jacket, always welcome" },
   { hex: "#4a4a48", name: "Charcoal", hint: "Grey suit, matte black accessories" },
   { hex: "#d4c4a8", name: "Sand", hint: "Linen blazer, tan chinos, light knit" },
 ];
@@ -189,7 +189,7 @@ export default function FigmaInvite() {
               <hr className={styles.heroRule} />
               {countdown.passed ? (
                 <p className={`${styles.heroDate} ${styles.heroAfterRule}`} style={{ fontSize: "1.125rem" }}>
-                  With love — thank you for celebrating with us.
+                  With love, thank you for celebrating with us.
                 </p>
               ) : (
                 <div className={`${styles.countdown} ${styles.heroAfterRule}`} aria-live="polite">
@@ -221,10 +221,10 @@ export default function FigmaInvite() {
             <div>
               <p className={styles.storyEyebrow}>Our Journey</p>
               <h2 className={styles.storyHeading}>
-                How we found each other — and kept choosing one another.
+                How we found each other, and kept choosing one another.
               </h2>
               <p className={styles.storyLead}>
-                Ours began in the most ordinary kind of room — a meeting at the office — and grew from
+                Ours began in the most ordinary kind of room, a meeting at the office, and grew from
                 there into something neither of us saw coming, until one birthday changed everything.
               </p>
               <div className={styles.timeline}>
@@ -234,7 +234,7 @@ export default function FigmaInvite() {
                   <p className={styles.timelineMeta}>March 28 • The office where we work</p>
                   <p className={styles.timelineBody}>
                     We met across a conference table: Karen as project manager, Anna as frontend
-                    developer. It was just another work meeting — until the conversation lingered, and
+                    developer. It was just another work meeting, until the conversation lingered, and
                     the professional line between us quietly softened into curiosity, then friendship,
                     then something neither agenda nor calendar had planned.
                   </p>
@@ -244,7 +244,7 @@ export default function FigmaInvite() {
                   <h3>The Proposal</h3>
                   <p className={styles.timelineMeta}>September 8 • Karen&apos;s birthday</p>
                   <p className={styles.timelineBody}>
-                    Anna chose a day Karen thought was only about cake and candles — her birthday, when
+                    Anna chose a day Karen thought was only about cake and candles, her birthday, when
                     she wasn&apos;t watching for a ring or a speech. In that unguarded, happy moment, the
                     question landed: not in a grand production, but in the middle of real life, when
                     love felt safest and most surprising all at once.
@@ -347,7 +347,7 @@ export default function FigmaInvite() {
                   <p className={styles.eventTime}>17:00</p>
                 </div>
                 <p className={styles.eventQuote}>
-                  &ldquo;Dining where gardens and open sky meet — at Art Village Armenia.&rdquo;
+                  &ldquo;Dining where gardens and open sky meet, at Art Village Armenia.&rdquo;
                 </p>
                 <div>
                   <div className={styles.eventLocation}>
@@ -355,7 +355,7 @@ export default function FigmaInvite() {
                     <div className={styles.eventLocationText}>
                       <p className={styles.eventVenueName}>Art Village Armenia</p>
                       <p className={styles.eventAddress}>
-                        Aragatsotn Province, Ashtarak Municipality — plot 25
+                        Aragatsotn Province, Ashtarak Municipality, plot 25
                       </p>
                       <div className={styles.eventVenueLinkRow}>
                         <a
@@ -388,7 +388,7 @@ export default function FigmaInvite() {
                   >
                     <img
                       src={figmaAssets.receptionMap}
-                      alt="Art Village Armenia — event venue and gardens"
+                      alt="Art Village Armenia, event venue and gardens"
                       decoding="async"
                     />
                     <div className={styles.eventMapTint} aria-hidden />
@@ -409,7 +409,7 @@ export default function FigmaInvite() {
                 What to wear &amp; which colours feel at home
               </h2>
               <p className={styles.attireBandLead}>
-                Garden formal with a whisper of the woods — think movement, texture, and tones that belong
+                Garden formal with a whisper of the woods, think movement, texture, and tones that belong
                 beside stone, grass, and candlelight.
               </p>
             </Reveal>
@@ -425,7 +425,7 @@ export default function FigmaInvite() {
                 <p className={styles.attireCardText}>
                   Think of the day in two chapters: the ceremony at Saint Anna, then celebration among the
                   gardens and halls of Art Village. Long or midi dresses, tailored suits, and polished
-                  separates all feel at home — we love when you dress up a little, in whatever shape that
+                  separates all feel at home, we love when you dress up a little, in whatever shape that
                   takes for you.
                 </p>
                 <p className={styles.attireCardText}>
@@ -435,7 +435,7 @@ export default function FigmaInvite() {
                 </p>
                 <ul className={styles.attireMiniList}>
                   <li>
-                    Fabrics that breathe: linen, silk, light wool, crepe — anything that drapes and moves
+                    Fabrics that breathe: linen, silk, light wool, crepe, anything that drapes and moves
                     with you through a long, happy day
                   </li>
                   <li>
@@ -443,12 +443,12 @@ export default function FigmaInvite() {
                     gravel between venues
                   </li>
                   <li>
-                    For suits, black is absolutely welcome — alongside navy, charcoal, greens, or anything
+                    For suits, black is absolutely welcome, alongside navy, charcoal, greens, or anything
                     in the palette below. A well-fitted jacket and trousers (or refined separates)
                     photographs beautifully beside softer dress tones
                   </li>
                   <li>
-                    A wrap, shawl, or light jacket for after sunset — especially if you run cool when the
+                    A wrap, shawl, or light jacket for after sunset, especially if you run cool when the
                     music starts
                   </li>
                   <li>
@@ -464,7 +464,7 @@ export default function FigmaInvite() {
                   <span className={styles.attireCardKicker}>Palette</span>
                   <h3 className={styles.attirePaletteTitle}>Colours we&apos;re dreaming of</h3>
                   <p className={styles.attirePaletteSub}>
-                    Two gentle ranges below — pick what feels like you. They sit in the same garden, so
+                    Two gentle ranges below, pick what feels like you. They sit in the same garden, so
                     everyone still photographs beautifully together.
                   </p>
                 </div>
@@ -512,15 +512,15 @@ export default function FigmaInvite() {
                 <div className={styles.attireTeaseQuestionsRow}>
                   <span className={styles.attireWhiteTeaseLabel}>A tiny rule, with humour</span>
                   <p className={styles.attireFootnoteInline}>
-                    Questions? Wear what makes you feel handsome, radiant, and ready to celebrate — if you&apos;re
+                    Questions? Wear what makes you feel handsome, radiant, and ready to celebrate, if you&apos;re
                     close to either palette above, you&apos;re already perfect.
                   </p>
                 </div>
                 <p className={styles.attireWhiteTease}>
-                  To the women joining us: white and ivory are on a <em>very</em> exclusive guest list — it
+                  To the women joining us: white and ivory are on a <em>very</em> exclusive guest list, it
                   caps at two, and we already filled both seats. If your outfit could moonlight in a detergent
                   ad or upstage us at the altar, please aim for literally any other colour. We promise we&apos;ll
-                  still gasp at how good you look — just not because you&apos;re wearing our signature shade.
+                  still gasp at how good you look, just not because you&apos;re wearing our signature shade.
                 </p>
               </div>
             </aside>
@@ -537,7 +537,7 @@ export default function FigmaInvite() {
                 Wedding day schedule
               </h2>
               <p className={styles.scheduleSub}>
-                Everything you need to know about where to be and when — times are a gentle guide; we&apos;ll
+                Everything you need to know about where to be and when, times are a gentle guide; we&apos;ll
                 keep you looked after from arrival to send-off.
               </p>
             </header>
@@ -595,7 +595,7 @@ export default function FigmaInvite() {
                 <p className={styles.rootsSubline}>Growing a new branch of family.</p>
                 <p className={styles.rootsLead}>
                   For us, marriage is more than a vow between two people. It gathers the stories, tables, and
-                  traditions we each grew up with — two family trees leaning close until their branches meet, and
+                  traditions we each grew up with, two family trees leaning close until their branches meet, and
                   something altogether new has room to grow.
                 </p>
                 <blockquote className={styles.rootsQuote}>
@@ -606,7 +606,7 @@ export default function FigmaInvite() {
                 <ul className={styles.rootsList}>
                   <li>Honoring the parents and elders who taught us how to love well.</li>
                   <li>Celebrating cousins, siblings, and friends who already feel like kin.</li>
-                  <li>Looking ahead to the memories we&apos;ll make — anniversaries, holidays, and ordinary Tuesdays.</li>
+                  <li>Looking ahead to the memories we&apos;ll make, anniversaries, holidays, and ordinary Tuesdays.</li>
                 </ul>
               </div>
             </Reveal>

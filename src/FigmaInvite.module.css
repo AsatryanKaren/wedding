@@ -3,7 +3,7 @@
   scroll-margin-top: 88px;
 }
 
-/* —— Motion: light opacity + transform; no blur on scroll reveals —— */
+/* Motion: light opacity + transform; no blur on scroll reveals */
 @keyframes fadeUp {
   from {
     opacity: 0;
@@ -142,7 +142,7 @@
 }
 
 .page {
-  /* Page surfaces — sage-tinted (aligned with header nav) */
+  /* Page surfaces, sage-tinted (aligned with header nav) */
   --cream: #edf3ee;
   --cream-muted: #dfe9e2;
   --stone: #d2e0d7;
@@ -226,7 +226,7 @@
   }
 }
 
-/* Wordmark only — no pill / chip so it doesn’t read as a button */
+/* Wordmark only, no pill / chip so it doesn’t read as a button */
 .logo {
   font-family: var(--font-serif);
   margin: 0;
@@ -319,7 +319,7 @@
   box-shadow: 0 10px 26px rgba(6, 27, 14, 0.22);
 }
 
-/* Hero — viewport height tracks the visible window (mobile URL bar, etc.) */
+/* Hero: viewport height tracks the visible window (mobile URL bar, etc.) */
 .hero {
   position: relative;
   min-height: 100vh;
@@ -340,7 +340,7 @@
   height: 100vh;
   height: 100svh;
   height: 100dvh;
-  /* Bottom edge + chevron read as more space; top shares fixed nav — extra padding-top balances */
+  /* Bottom edge + chevron read as more space; top shares fixed nav, extra padding-top balances */
   --hero-banner-edge: clamp(48px, 6.5vw, 72px);
   --hero-banner-top-extra: clamp(52px, 11vw, 76px);
   padding-top: calc(var(--hero-banner-edge) + var(--hero-banner-top-extra));
@@ -349,7 +349,7 @@
   padding-right: 0;
 }
 
-/* Unified hero: stationery image + copy at once — no gate, no hero entrance animation */
+/* Unified hero: stationery image + copy at once, no gate, no hero entrance animation */
 .heroUnifiedInner {
   position: relative;
   z-index: 2;
@@ -561,7 +561,7 @@
     justify-content: center;
   }
 
-  /* Scroll hint arrow — desktop only; on phones users naturally scroll */
+  /* Scroll hint arrow: desktop only; on phones users naturally scroll */
   .heroUnified .heroChevron {
     display: none !important;
   }
@@ -709,7 +709,7 @@
   }
 }
 
-/* Opened letter: no landscape photo — paper field + inner card */
+/* Opened letter: no landscape photo, paper field + inner card */
 .heroLetterOpened {
   background:
     radial-gradient(ellipse 92% 62% at 50% 0%, rgba(208, 233, 212, 0.65) 0%, transparent 56%),
@@ -1016,7 +1016,7 @@
   pointer-events: none;
 }
 
-/* Story gallery: one featured frame + two stacked — editorial, not equal tiles */
+/* Story gallery: one featured frame + two stacked, editorial, not equal tiles */
 .photoGrid {
   display: grid;
   grid-template-columns: 1fr;
@@ -1372,7 +1372,7 @@
   pointer-events: none;
 }
 
-/* Attire & colour palette — editorial band + fabric swatches */
+/* Attire & colour palette: editorial band + fabric swatches */
 .attire {
   background: var(--cream);
   border-top: 1px solid var(--border-timeline);
@@ -1727,7 +1727,7 @@
   display: block;
 }
 
-/* Wedding day schedule — wide zigzag + flowing vine (not a centered rail) */
+/* Wedding day schedule: wide zigzag + flowing vine (not a centered rail) */
 .schedule {
   background:
     radial-gradient(ellipse 72% 48% at 0% 18%, rgba(208, 233, 212, 0.28) 0%, transparent 58%),
@@ -1833,7 +1833,7 @@
   list-style: none;
 }
 
-/* Knot on the vine — alternates side so it reads with the zigzag */
+/* Knot on the vine: alternates side so it reads with the zigzag */
 .scheduleItem::before {
   content: "";
   position: absolute;
@@ -2046,7 +2046,7 @@
   }
 }
 
-/* Roots — two families, one new life (tree visual) */
+/* Roots: two families, one new life (tree visual) */
 .roots {
   background: linear-gradient(180deg, var(--cream-muted) 0%, var(--cream) 45%, var(--cream-muted) 100%);
   padding: clamp(56px, 9vw, 108px) clamp(20px, 4vw, 56px);

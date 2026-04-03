@@ -1,8 +1,8 @@
-/** Social / messaging link previews — absolute URLs for og:image & canonical */
+/** Social / messaging link previews: absolute URLs for og:image and canonical */
 
-const SHARE_TITLE = "Karen & Anna — Wedding, 24 June 2026";
+const SHARE_TITLE = "Karen & Anna, Wedding, 24 June 2026";
 const SHARE_DESCRIPTION =
-  "Join us in Yerevan — ceremony at Saint Anna Church, celebration at Art Village Armenia. Save the date.";
+  "Join us in Yerevan, ceremony at Saint Anna Church, celebration at Art Village Armenia. Save the date.";
 
 const SHARE_IMAGE_PATH = "hero-letter-cover.jpg";
 
@@ -39,7 +39,7 @@ export function applyShareMeta() {
   setMeta("property", "og:type", "website");
   setMeta("property", "og:url", pageUrl);
   setMeta("property", "og:image", imageUrl);
-  setMeta("property", "og:image:alt", "Wedding invitation — Karen and Anna");
+  setMeta("property", "og:image:alt", "Wedding invitation, Karen and Anna");
   setMeta("property", "og:site_name", "Karen & Anna");
   setMeta("property", "og:locale", "en_GB");
 
@@ -59,7 +59,7 @@ export function applyShareMeta() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "MarriageEvent",
-    name: "Karen & Anna — Wedding",
+    name: "Karen & Anna, Wedding",
     description: SHARE_DESCRIPTION,
     image: imageUrl,
     startDate: "2026-06-24T14:00:00+04:00",

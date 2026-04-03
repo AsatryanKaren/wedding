@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 
-/** Section `id`s in document order — must match `href="#..."` in the nav */
+/** Section `id`s in document order; must match `href="#..."` in the nav */
 const SECTION_IDS = ["home", "story", "events", "attire", "schedule", "roots"];
 
 /**
  * Which section is “current” while scrolling (for fixed nav highlight).
- * Uses the last section whose top has crossed the offset — aligns with anchor scroll-margin.
+ * Uses the last section whose top has crossed the offset (aligns with anchor scroll-margin).
  */
 export function useActiveNavSection(offsetPx = 96) {
   const [activeId, setActiveId] = useState(SECTION_IDS[0]);

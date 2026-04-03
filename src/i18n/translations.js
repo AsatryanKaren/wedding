@@ -63,7 +63,7 @@ export const translations = {
     map: {
       eyebrow: "Վայր",
       title: "Ինչպես հասնել",
-      body: "Սուրբ Աննա եկեղեցի — Հայաստան",
+      body: "Սուրբ Աննա եկեղեցի, Հայաստան",
       openInMaps: "Բացել քարտեզում",
       embedNote: "Եթե քարտեզը չի երևում, բացեք այն հղումով։"
     },
@@ -74,7 +74,7 @@ export const translations = {
     },
     footer: {
       ariaLabel: "Էջատակի նշում",
-      note: "Պսակադրության հրավեր — փոքր ու մտերիմ արարողություն"
+      note: "Պսակադրության հրավեր, փոքր ու մտերիմ արարողություն"
     },
     gate: {
       ariaLabel: "Բացել հրավերը և անցնել կայք",
@@ -107,7 +107,7 @@ export const translations = {
       placeLabel: "Place",
       date: "June 24, 2026",
       time: "14:00",
-      place: "Saint Anna Church — Abovyan St, Yerevan",
+      place: "Saint Anna Church, Abovyan St, Yerevan",
       scrollHint: "Scroll down",
       countdownLabel: "Time until"
     },
@@ -116,7 +116,7 @@ export const translations = {
       title: "On our quietest, most meaningful day",
       body: [
         "Dear family and friends,",
-        "We want to share one of the most meaningful moments of our lives with you — in prayer and blessing.",
+        "We want to share one of the most meaningful moments of our lives with you, in prayer and blessing.",
         "We would be honoured if you joined us for our wedding ceremony and warmed this day with your presence."
       ],
       signature: "With love, Karen & Anna"
@@ -135,7 +135,7 @@ export const translations = {
       eyebrow: "Those closest to us",
       title: "A small, heartfelt ceremony",
       body: [
-        "Our wedding will be intimate and very personal — only the church ceremony.",
+        "Our wedding will be intimate and very personal, only the church ceremony.",
         "There will be no separate large reception or party: what matters most to us is having you beside us in that moment."
       ]
     },
@@ -150,7 +150,7 @@ export const translations = {
     map: {
       eyebrow: "Location",
       title: "How to get there",
-      body: "Saint Anna Church — Abovyan St, Yerevan · Reception: Art Village Armenia (Ashtarak)",
+      body: "Saint Anna Church, Abovyan St, Yerevan · Reception: Art Village Armenia (Ashtarak)",
       openInMaps: "Open in maps",
       embedNote: "If the map does not load, open it using the link."
     },
@@ -161,12 +161,12 @@ export const translations = {
     },
     footer: {
       ariaLabel: "Footer note",
-      note: "Wedding ceremony invitation — an intimate gathering"
+      note: "Wedding ceremony invitation, an intimate gathering"
     },
     gate: {
       ariaLabel: "Open invitation and enter the site",
       message:
-        "We would be honoured to have you with us at our wedding ceremony—to share this meaningful moment together.",
+        "We would be honoured to have you with us at our wedding ceremony, to share this meaningful moment together.",
       tagline: "An intimate ceremony",
       hint: "Click anywhere on the invitation to continue",
       cta: "Open invitation"
