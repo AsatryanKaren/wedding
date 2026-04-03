@@ -38,7 +38,6 @@
 :global([data-reduced-motion="1"]) .mark{
   animation: none;
 }
-
 .p{
   margin: 0;
   font-size: 15.5px;
