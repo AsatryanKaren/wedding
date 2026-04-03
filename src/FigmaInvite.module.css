@@ -561,16 +561,9 @@
     justify-content: center;
   }
 
+  /* Scroll hint arrow — desktop only; on phones users naturally scroll */
   .heroUnified .heroChevron {
-    position: relative;
-    left: auto;
-    bottom: auto;
-    transform: none;
-    align-self: center;
-    margin-top: clamp(6px, 2vw, 12px);
-    margin-bottom: 4px;
-    padding: 12px;
-    opacity: 0.75;
+    display: none !important;
   }
 }
 

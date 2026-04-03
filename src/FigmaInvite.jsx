@@ -1,6 +1,7 @@
 import { figmaAssets, venueLinks } from "./constants/figmaAssets.js";
 import { useInViewOnce } from "./hooks/useInViewOnce.js";
 import { useReducedMotion } from "./hooks/useReducedMotion.js";
+import { useActiveNavSection } from "./hooks/useActiveNavSection.js";
 import { useScrollPast } from "./hooks/useScrollPast.js";
 import { useWeddingCountdown } from "./hooks/useWeddingCountdown.js";
 import { FamilyTreeVisual } from "./components/FamilyTreeVisual.jsx";
@@ -117,10 +118,20 @@ function Reveal({ as: Tag = "div", children, className = "", delayMs = 0, reduce
   );
 }
 
+const NAV_LINKS = [
+  { id: "home", label: "Home" },
+  { id: "story", label: "Story" },
+  { id: "events", label: "Details" },
+  { id: "attire", label: "Attire" },
+  { id: "schedule", label: "Schedule" },
+  { id: "roots", label: "Roots" },
+];
+
 export default function FigmaInvite() {
   const countdown = useWeddingCountdown(WEDDING_AT);
   const reducedMotion = useReducedMotion();
   const navScrolled = useScrollPast(40);
+  const activeNavId = useActiveNavSection(88);
 
   const motion = reducedMotion ? "reduce" : "full";
 
@@ -134,26 +145,17 @@ export default function FigmaInvite() {
         </p>
         <nav aria-label="Primary">
           <ul className={styles.navLinks}>
-            <li>
-              <a className={styles.active} href="#home">
-                Home
-              </a>
-            </li>
-            <li>
-              <a href="#story">Story</a>
-            </li>
-            <li>
-              <a href="#events">Details</a>
-            </li>
-            <li>
-              <a href="#attire">Attire</a>
-            </li>
-            <li>
-              <a href="#schedule">Schedule</a>
-            </li>
-            <li>
-              <a href="#roots">Roots</a>
-            </li>
+            {NAV_LINKS.map(({ id, label }) => (
+              <li key={id}>
+                <a
+                  className={activeNavId === id ? styles.active : undefined}
+                  href={`#${id}`}
+                  aria-current={activeNavId === id ? "true" : undefined}
+                >
+                  {label}
+                </a>
+              </li>
+            ))}
           </ul>
         </nav>
       </header>
