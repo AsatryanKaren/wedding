@@ -1,0 +1,54 @@
+.layer{
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  opacity: .9;
+  mask-image: radial-gradient(760px 520px at 50% 28%, rgba(0,0,0,1) 0%, rgba(0,0,0,.9) 52%, rgba(0,0,0,0) 82%);
+}
+
+.petal{
+  position: absolute;
+  top: -12%;
+  width: calc(14px * var(--s));
+  height: calc(10px * var(--s));
+  border-radius: 999px 999px 999px 6px;
+  transform: rotate(var(--r));
+  filter: blur(.2px);
+  animation: fall var(--t) var(--ease) var(--d) infinite;
+  will-change: transform;
+}
+
+.champagne{
+  background:
+    radial-gradient(circle at 30% 30%, rgba(255,255,255,.78) 0%, rgba(255,255,255,.22) 34%, rgb(var(--highlight-rgb) / .22) 72%, rgb(var(--highlight-rgb) / 0) 100%);
+  box-shadow: 0 18px 40px rgb(var(--accent-rgb) / .08);
+}
+
+.pearl{
+  background:
+    radial-gradient(circle at 30% 30%, rgba(255,255,255,.82) 0%, rgba(255,255,255,.30) 40%, rgba(255,255,255,.12) 78%, rgba(255,255,255,0) 100%);
+  box-shadow: 0 18px 40px rgb(var(--deep-shadow-rgb) / .06);
+}
+
+@keyframes fall{
+  0%{
+    transform: translate3d(0, 0, 0) rotate(var(--r)) scale(1);
+    opacity: 0;
+  }
+  10%{ opacity: .55; }
+  55%{
+    transform: translate3d(var(--x), 62vh, 0) rotate(calc(var(--r) + 120deg)) scale(1.02);
+    opacity: .42;
+  }
+  100%{
+    transform: translate3d(calc(var(--x) * -1), 118vh, 0) rotate(calc(var(--r) + 260deg)) scale(.98);
+    opacity: 0;
+  }
+}
+
+:global([data-reduced-motion="1"]) .petal{
+  animation: none;
+  display: none;
+}
+

@@ -1,0 +1,145 @@
+.wrap {
+  --ft-forest: #061b0e;
+  --ft-gold: #735c00;
+  --ft-sage: #4d6453;
+  color: var(--ft-forest);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.svg {
+  width: 100%;
+  max-width: min(440px, 94vw);
+  height: auto;
+  overflow: visible;
+  filter: drop-shadow(0 14px 28px rgba(6, 27, 14, 0.09));
+}
+
+.roots {
+  transform-origin: 210px 505px;
+}
+
+.trunkLeft,
+.trunkRight,
+.trunk {
+  transform-origin: 210px 320px;
+}
+
+.branchLeft,
+.branchRight {
+  transform-origin: 210px 265px;
+}
+
+.canopy {
+  transform-origin: 210px 175px;
+}
+
+.rings {
+  transform-origin: 210px 384px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .roots {
+    animation: rootsSettle 1.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  .trunkLeft,
+  .trunkRight,
+  .trunk {
+    animation: trunkMerge 1.45s cubic-bezier(0.22, 1, 0.36, 1) 0.08s both;
+  }
+
+  .branchLeft {
+    animation: branchSwayL 18s ease-in-out infinite;
+  }
+
+  .branchRight {
+    animation: branchSwayR 20s ease-in-out infinite;
+  }
+
+  .canopy {
+    animation: canopyGlow 14s ease-in-out infinite;
+  }
+}
+
+@keyframes rootsSettle {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes trunkMerge {
+  from {
+    opacity: 0;
+    transform: translateY(6px) scaleY(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scaleY(1);
+  }
+}
+
+@keyframes branchSwayL {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(-0.45deg);
+  }
+}
+
+@keyframes branchSwayR {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(0.4deg);
+  }
+}
+
+@keyframes canopyGlow {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.96;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .rings {
+    animation: ringPulse 10s ease-in-out infinite;
+  }
+}
+
+@keyframes ringPulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.88;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .roots,
+  .trunkLeft,
+  .trunkRight,
+  .trunk,
+  .branchLeft,
+  .branchRight,
+  .canopy,
+  .rings {
+    animation: none;
+  }
+}

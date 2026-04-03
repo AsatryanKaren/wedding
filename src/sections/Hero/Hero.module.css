@@ -1,0 +1,363 @@
+.hero{
+  position: relative;
+  min-height: calc(100dvh - 54px);
+  display: grid;
+  place-items: center;
+  padding: 44px 0 32px;
+  margin: 8px 0 18px;
+  border-radius: calc(var(--radius) + 14px);
+  overflow: hidden;
+  box-shadow: var(--shadow), inset 0 1px 0 rgb(255 255 255 / 0.5);
+  border: 1px solid rgb(var(--accent-rgb) / 0.2);
+  background:
+    linear-gradient(168deg, rgb(255 253 248 / 0.72) 0%, rgb(236 229 214 / 0.42) 45%, rgb(255 252 246 / 0.68) 100%);
+}
+
+.bg{
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(900px 540px at 50% 25%, rgba(255,255,255,.75) 0%, rgba(255,255,255,.10) 62%, rgba(255,255,255,0) 100%),
+    radial-gradient(560px 420px at 20% 70%, rgb(var(--highlight-rgb) / .26) 0%, rgb(var(--highlight-rgb) / 0) 70%),
+    radial-gradient(560px 420px at 80% 70%, rgb(var(--accent-rgb) / .18) 0%, rgb(var(--accent-rgb) / 0) 70%);
+}
+
+.bgFade{
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  background: linear-gradient(180deg, rgb(255 250 240 / .92) 0%, rgb(247 239 227 / .70) 55%, rgb(255 250 240 / .86) 100%);
+  transform: translateZ(0);
+  animation: fadeIn 1200ms var(--ease-soft) 120ms forwards;
+}
+
+.bgFade::after{
+  content:"";
+  position: absolute;
+  inset: -40% -20%;
+  background:
+    radial-gradient(closest-side, rgba(255,255,255,.45) 0%, rgba(255,255,255,0) 64%),
+    radial-gradient(closest-side, rgb(var(--highlight-rgb) / .22) 0%, rgb(var(--highlight-rgb) / 0) 70%);
+  opacity: 0;
+  transform: translate3d(-6%, -4%, 0);
+  filter: blur(1px);
+  animation: sweep 5200ms var(--ease-soft) 860ms infinite;
+}
+
+.vignette{
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(800px 480px at 50% 30%, rgb(var(--deep-shadow-rgb) / 0) 0%, rgb(var(--deep-shadow-rgb) / 0.06) 66%, rgb(var(--deep-shadow-rgb) / 0.12) 100%);
+  pointer-events: none;
+}
+
+.frame{
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  pointer-events: none;
+}
+
+.frameSvg{
+  width: min(980px, 94%);
+  height: auto;
+}
+
+.frameSvg rect{
+  fill: rgb(var(--highlight-rgb) / 0.08);
+  stroke: rgb(var(--accent-rgb) / 0.38);
+  stroke-width: 1.35px;
+  stroke-dasharray: 3000;
+  stroke-dashoffset: 3000;
+  filter: drop-shadow(0 24px 56px rgb(var(--deep-shadow-rgb) / 0.1));
+  animation: draw 1700ms var(--ease-out-expo) 380ms forwards;
+}
+
+.inner{
+  position: relative;
+  z-index: 1;
+  width: min(920px, calc(100% - 34px));
+  display: grid;
+  justify-items: center;
+  text-align: center;
+}
+
+.top{
+  opacity: 0;
+  transform: translateY(6px);
+  filter: blur(6px);
+  animation: rise 1050ms var(--ease-out-expo) 360ms forwards;
+}
+
+.names{
+  margin-top: 18px;
+  display: grid;
+  gap: 14px;
+}
+
+.nameLine{
+  margin: 0;
+}
+
+.name{
+  font-family: var(--serif);
+  font-weight: 500;
+  letter-spacing: .02em;
+  font-size: clamp(30px, 7.4vw, 62px);
+  line-height: 1.02;
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(10px);
+  filter: blur(10px);
+}
+
+[data-loaded="1"] .name{
+  animation: reveal 1180ms var(--ease-out-expo) 520ms forwards;
+}
+
+[data-loaded="1"] .names h2 .name{
+  animation-delay: 700ms;
+}
+
+.and{
+  display: grid;
+  grid-auto-flow: column;
+  align-items: center;
+  gap: 12px;
+  color: rgb(var(--accent-rgb) / .62);
+  opacity: 0;
+  transform: translateY(6px);
+  filter: blur(6px);
+}
+
+[data-loaded="1"] .and{
+  animation: rise 1000ms var(--ease-out-expo) 640ms forwards;
+}
+
+.andLine{
+  width: min(160px, 20vw);
+  height: 1px;
+  background: linear-gradient(90deg, rgb(var(--accent-rgb) / 0) 0%, rgb(var(--accent-rgb) / .30) 50%, rgb(var(--accent-rgb) / 0) 100%);
+}
+
+.andAmp{
+  font-family: var(--serif);
+  font-size: 18px;
+  opacity: .85;
+}
+
+.infoGrid{
+  margin-top: 6px;
+  display: grid;
+  gap: 10px;
+  width: min(640px, 100%);
+  opacity: 0;
+  transform: translateY(10px);
+  filter: blur(10px);
+}
+
+[data-loaded="1"] .infoGrid{
+  animation: rise 1100ms var(--ease-out-expo) 860ms forwards;
+}
+
+.infoItem{
+  position: relative;
+  border-radius: var(--radius-sm);
+  padding: 16px 16px;
+  background: linear-gradient(180deg, rgb(255 253 248 / 0.94) 0%, rgb(246 241 230 / 0.78) 100%);
+  border: 1px solid rgb(var(--accent-rgb) / 0.18);
+  box-shadow:
+    0 16px 40px rgb(var(--deep-shadow-rgb) / 0.07),
+    inset 0 1px 0 rgb(255 255 255 / 0.92);
+  transition:
+    transform 0.5s var(--ease-out-expo),
+    box-shadow 0.5s var(--ease-out-expo),
+    border-color 0.35s var(--ease);
+}
+
+.infoItem::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 18px;
+  right: 18px;
+  height: 3px;
+  border-radius: 0 0 4px 4px;
+  background: linear-gradient(90deg, transparent, rgb(var(--accent-rgb) / 0.4), transparent);
+  opacity: 0.9;
+}
+
+@media (hover: hover){
+  .infoItem:hover{
+    transform: translateY(-4px);
+    border-color: rgb(var(--accent-rgb) / 0.3);
+    box-shadow:
+      0 24px 52px rgb(var(--deep-shadow-rgb) / 0.1),
+      inset 0 1px 0 rgb(255 255 255 / 0.98);
+  }
+}
+
+:global([data-reduced-motion="1"]) .infoItem{
+  transition: none;
+}
+
+:global([data-reduced-motion="1"]) .infoItem:hover{
+  transform: none;
+}
+
+.infoWide{
+  padding: 14px 16px;
+}
+
+.k{
+  font-size: 12px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: rgb(var(--accent-rgb) / .78);
+}
+
+.v{
+  margin-top: 6px;
+  font-size: 15.5px;
+  line-height: 1.35;
+  color: rgb(var(--ink-rgb) / .88);
+}
+
+.countdown{
+  margin-top: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 18px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, rgb(255 253 248 / 0.88) 0%, rgb(234 227 210 / 0.65) 100%);
+  border: 1px solid rgb(var(--accent-rgb) / 0.22);
+  box-shadow: 0 12px 32px rgb(var(--deep-shadow-rgb) / 0.06), inset 0 1px 0 rgb(255 255 255 / 0.85);
+  color: rgb(var(--ink-rgb) / 0.78);
+  opacity: 0;
+  transform: translateY(10px);
+  filter: blur(10px);
+}
+
+[data-loaded="1"] .countdown{
+  animation: rise 1000ms var(--ease-out-expo) 1000ms forwards;
+}
+
+.countdownLabel{
+  color: rgb(var(--accent-rgb) / .88);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  font-size: 11px;
+}
+
+.countdownValue{
+  font-weight: 500;
+  font-size: 13px;
+  letter-spacing: .01em;
+}
+
+.scroll{
+  margin-top: 18px;
+  display: grid;
+  justify-items: center;
+  gap: 8px;
+  opacity: 0;
+  transform: translateY(10px);
+  filter: blur(10px);
+  padding: 10px 10px 4px;
+  border-radius: 16px;
+  transition: transform 240ms var(--ease);
+}
+
+[data-loaded="1"] .scroll{
+  animation: rise 1000ms var(--ease-out-expo) 1140ms forwards;
+}
+
+.scroll:hover{
+  transform: translateY(-3px);
+}
+
+.scrollText{
+  font-size: 12px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: rgb(var(--ink-rgb) / .62);
+}
+
+.scrollDot{
+  width: 8px;
+  height: 14px;
+  border-radius: 999px;
+  border: 1px solid rgb(var(--accent-rgb) / .40);
+  position: relative;
+}
+
+.scrollDot::after{
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 3px;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: rgb(var(--accent-rgb) / .62);
+  transform: translateX(-50%);
+  animation: dot 1400ms var(--ease) 0ms infinite;
+}
+
+@keyframes fadeIn{
+  to{ opacity: 1; }
+}
+@keyframes draw{
+  to{ stroke-dashoffset: 0; }
+}
+@keyframes reveal{
+  to{ opacity: 1; transform: translateY(0); filter: blur(0); }
+}
+@keyframes rise{
+  to{ opacity: 1; transform: translateY(0); filter: blur(0); }
+}
+@keyframes dot{
+  0%{ transform: translate(-50%, 0); opacity: .2; }
+  40%{ transform: translate(-50%, 6px); opacity: .9; }
+  100%{ transform: translate(-50%, 10px); opacity: .15; }
+}
+
+@keyframes sweep{
+  0%{ opacity: 0; transform: translate3d(-8%, -4%, 0); }
+  20%{ opacity: .55; }
+  55%{ opacity: .22; transform: translate3d(6%, 3%, 0); }
+  100%{ opacity: 0; transform: translate3d(10%, 6%, 0); }
+}
+
+@media (min-width: 760px){
+  .hero{ padding: 54px 0 40px; margin: 12px 0 26px; }
+  .infoGrid{
+    grid-template-columns: 1fr 1fr;
+    align-items: stretch;
+  }
+  .infoWide{ grid-column: 1 / -1; }
+}
+
+:global([data-reduced-motion="1"]) .bgFade,
+:global([data-reduced-motion="1"]) .frameSvg rect,
+:global([data-reduced-motion="1"]) .top,
+:global([data-reduced-motion="1"]) .and,
+:global([data-reduced-motion="1"]) .infoGrid,
+:global([data-reduced-motion="1"]) .countdown,
+:global([data-reduced-motion="1"]) .scroll,
+:global([data-reduced-motion="1"]) .name{
+  animation: none !important;
+  opacity: 1 !important;
+  transform: none !important;
+  filter: none !important;
+}
+
+:global([data-reduced-motion="1"]) .bgFade::after{
+  animation: none !important;
+  opacity: 1 !important;
+  transform: none !important;
+  filter: none !important;
+}
+

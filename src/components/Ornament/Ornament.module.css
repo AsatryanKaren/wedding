@@ -1,0 +1,29 @@
+.wrap{
+  display: grid;
+  grid-auto-flow: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  color: rgb(var(--accent-rgb) / .62);
+  margin: 22px 0;
+}
+
+.line{
+  height: 1px;
+  width: min(170px, 20vw);
+  background: linear-gradient(90deg, rgb(var(--accent-rgb) / 0) 0%, rgb(var(--accent-rgb) / .30) 45%, rgb(var(--accent-rgb) / 0) 100%);
+}
+
+.dot{
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgb(var(--accent-rgb) / .32);
+  box-shadow: 0 0 0 6px rgb(var(--accent-rgb) / .08);
+}
+
+.flourish{
+  width: min(220px, 44vw);
+  height: 22px;
+}
+

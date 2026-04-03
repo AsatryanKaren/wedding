@@ -1,0 +1,87 @@
+.section{
+  padding-bottom: 10px;
+}
+
+.bg{
+  position: absolute;
+  inset: -40px -20px -20px -20px;
+  pointer-events: none;
+  background:
+    radial-gradient(900px 400px at 50% 30%, rgba(255,255,255,.70) 0%, rgba(255,255,255,0) 70%),
+    radial-gradient(700px 420px at 50% 100%, rgb(var(--highlight-rgb) / .22) 0%, rgb(var(--highlight-rgb) / 0) 70%);
+  opacity: .9;
+  filter: blur(2px);
+}
+
+.center{
+  position: relative;
+  padding: 44px 18px;
+  border-radius: calc(var(--radius) + 12px);
+  border: 1px solid rgb(var(--accent-rgb) / 0.22);
+  background: linear-gradient(165deg, rgb(255 253 248 / 0.78) 0%, rgb(232 225 208 / 0.52) 48%, rgb(255 252 246 / 0.72) 100%);
+  box-shadow: var(--shadow-soft), inset 0 1px 0 rgb(255 255 255 / 0.85);
+  text-align: center;
+  display: grid;
+  justify-items: center;
+  overflow: hidden;
+  transition: box-shadow 0.5s var(--ease-out-expo), transform 0.5s var(--ease-out-expo);
+}
+
+@media (hover: hover){
+  .center:hover{
+    box-shadow: var(--shadow-lift), inset 0 1px 0 rgb(255 255 255 / 0.92);
+  }
+}
+
+:global([data-reduced-motion="1"]) .center{
+  transition: none;
+}
+
+:global([data-reduced-motion="1"]) .center:hover{
+  box-shadow: var(--shadow-soft), inset 0 1px 0 rgb(255 255 255 / 0.85);
+}
+
+.center::after{
+  content:"";
+  position: absolute;
+  inset: -120px -260px auto -260px;
+  height: 240px;
+  background: radial-gradient(closest-side, rgb(var(--highlight-rgb) / .26) 0%, rgb(var(--highlight-rgb) / 0) 72%);
+  opacity: .7;
+}
+
+.title{
+  position: relative;
+  margin: 0;
+  font-family: var(--serif);
+  font-weight: 500;
+  letter-spacing: .01em;
+  font-size: clamp(28px, 5vw, 44px);
+  line-height: 1.06;
+  color: rgb(var(--ink-rgb) / .92);
+}
+
+.body{
+  position: relative;
+  margin: 0;
+  font-size: 15.5px;
+  line-height: 1.78;
+  color: rgb(var(--ink-rgb) / .72);
+  width: min(720px, 100%);
+}
+
+.names{
+  position: relative;
+  margin-top: 12px;
+  font-family: var(--serif);
+  font-size: 18px;
+  letter-spacing: .02em;
+  color: rgb(var(--accent-rgb) / .86);
+}
+
+@media (min-width: 720px){
+  .center{ padding: 56px 28px; }
+  .body{ font-size: 16px; }
+  .names{ font-size: 20px; }
+}
+

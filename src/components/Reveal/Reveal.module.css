@@ -1,0 +1,23 @@
+.reveal{
+  opacity: 0;
+  transform: translate3d(0, 22px, 0) scale(0.985);
+  filter: blur(8px);
+  transition:
+    opacity 1000ms var(--ease-out-expo) var(--d, 0ms),
+    transform 1000ms var(--ease-out-expo) var(--d, 0ms),
+    filter 900ms var(--ease-soft) var(--d, 0ms);
+  will-change: transform, opacity, filter;
+}
+
+.in{
+  opacity: 1;
+  transform: translate3d(0, 0, 0) scale(1);
+  filter: blur(0);
+}
+
+:global([data-reduced-motion="1"]) .reveal{
+  transition: none;
+  opacity: 1;
+  transform: none;
+  filter: none;
+}
