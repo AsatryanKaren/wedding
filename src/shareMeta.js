@@ -1,10 +1,27 @@
 /** Social / messaging link previews: absolute URLs for og:image and canonical */
 
-const SHARE_TITLE = "Karen & Anna, Wedding, 24 June 2026";
-const SHARE_DESCRIPTION =
-  "Join us in Yerevan, ceremony at Saint Anna Church, celebration at Art Village Armenia. Save the date.";
-
 const SHARE_IMAGE_PATH = "hero-letter-cover.jpg";
+
+const SHARE_BY_LANG = {
+  en: {
+    title: "Karen & Anna, Wedding, 24 June 2026",
+    description:
+      "Join us in Yerevan, ceremony at Saint Anna Church, celebration at Art Village Armenia. Save the date.",
+    ogLocale: "en_GB",
+    imageAlt: "Wedding invitation, Karen and Anna",
+    siteName: "Karen & Anna",
+    jsonLdName: "Karen & Anna, Wedding",
+  },
+  hy: {
+    title: "Կարեն և Աննա · հարսանիք, 24 հունիս 2026",
+    description:
+      "Հրավիրում ենք Երևան՝ պսակադրություն Սուրբ Աննա եկեղեցում, խնջույք Art Village Armenia-ում։ Պահեք ամսաթիվը։",
+    ogLocale: "hy_AM",
+    imageAlt: "Հարսանեկան հրավեր, Կարեն և Աննա",
+    siteName: "Կարեն և Աննա",
+    jsonLdName: "Կարեն և Աննա, հարսանիք",
+  },
+};
 
 function ensureMeta(attrName, attrValue) {
   let el = document.querySelector(`meta[${attrName}="${attrValue}"]`);
@@ -21,31 +38,34 @@ function setMeta(attrName, attrValue, content) {
   el.setAttribute("content", content);
 }
 
-export function applyShareMeta() {
+export function applyShareMeta(lang = "en") {
   if (typeof window === "undefined") return;
+
+  const locale = lang === "en" ? "en" : "hy";
+  const share = SHARE_BY_LANG[locale];
 
   const base = import.meta.env.BASE_URL || "/";
   const origin = window.location.origin;
   const imageUrl = new URL(SHARE_IMAGE_PATH, origin + (base.endsWith("/") ? base : `${base}/`)).href;
   const pageUrl = `${origin}${window.location.pathname}${window.location.search}`;
 
-  document.title = SHARE_TITLE;
+  document.title = share.title;
 
   const descEl = document.querySelector('meta[name="description"]');
-  if (descEl) descEl.setAttribute("content", SHARE_DESCRIPTION);
+  if (descEl) descEl.setAttribute("content", share.description);
 
-  setMeta("property", "og:title", SHARE_TITLE);
-  setMeta("property", "og:description", SHARE_DESCRIPTION);
+  setMeta("property", "og:title", share.title);
+  setMeta("property", "og:description", share.description);
   setMeta("property", "og:type", "website");
   setMeta("property", "og:url", pageUrl);
   setMeta("property", "og:image", imageUrl);
-  setMeta("property", "og:image:alt", "Wedding invitation, Karen and Anna");
-  setMeta("property", "og:site_name", "Karen & Anna");
-  setMeta("property", "og:locale", "en_GB");
+  setMeta("property", "og:image:alt", share.imageAlt);
+  setMeta("property", "og:site_name", share.siteName);
+  setMeta("property", "og:locale", share.ogLocale);
 
   setMeta("name", "twitter:card", "summary_large_image");
-  setMeta("name", "twitter:title", SHARE_TITLE);
-  setMeta("name", "twitter:description", SHARE_DESCRIPTION);
+  setMeta("name", "twitter:title", share.title);
+  setMeta("name", "twitter:description", share.description);
   setMeta("name", "twitter:image", imageUrl);
 
   let canonical = document.querySelector('link[rel="canonical"]');
@@ -59,8 +79,8 @@ export function applyShareMeta() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "MarriageEvent",
-    name: "Karen & Anna, Wedding",
-    description: SHARE_DESCRIPTION,
+    name: share.jsonLdName,
+    description: share.description,
     image: imageUrl,
     startDate: "2026-06-24T14:00:00+04:00",
     eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",

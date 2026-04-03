@@ -163,6 +163,11 @@
   --nav-surface: rgba(232, 242, 234, 0.9);
   --nav-surface-scrolled: rgba(218, 232, 222, 0.94);
   --nav-edge: rgba(77, 100, 83, 0.14);
+  /* LanguageSwitcher (shared pill styles) */
+  --accent-rgb: 77 100 83;
+  --highlight-rgb: 115 92 0;
+  --deep-shadow-rgb: 27 48 34;
+  --ink-rgb: 27 28 25;
   --footer-muted: rgba(27, 48, 34, 0.6);
   --footer-faint: rgba(27, 48, 34, 0.4);
   --border-timeline: rgba(100, 125, 108, 0.22);
@@ -172,6 +177,22 @@
   color: var(--forest);
   font-family: var(--font-sans);
   min-height: 100vh;
+}
+
+.topNavBrand {
+  display: flex;
+  align-items: center; /* optically centers the globe with the names */
+  flex-wrap: wrap;
+  gap: 2px 10px;
+  min-width: 0;
+}
+
+.topNavRight {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px 20px;
+  justify-content: flex-end;
 }
 
 .topNav {
@@ -220,9 +241,10 @@
     gap: var(--nav-mobile-gap);
   }
 
-  .logo {
+  .topNavBrand {
     margin-left: auto;
     margin-right: auto;
+    justify-content: center;
   }
 }
 
@@ -1670,8 +1692,8 @@
 
 @media (min-width: 960px) {
   .attireSwatchRow {
-    grid-template-columns: repeat(6, minmax(0, 1fr));
-    gap: 14px 12px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px 14px;
   }
 }
 
@@ -1717,6 +1739,9 @@
   letter-spacing: 0.04em;
   color: var(--forest);
   text-align: center;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  hyphens: auto;
 }
 
 .attireSwatchHint {
@@ -1725,6 +1750,9 @@
   color: var(--sage-text);
   text-align: center;
   display: block;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  hyphens: auto;
 }
 
 /* Wedding day schedule: wide zigzag + flowing vine (not a centered rail) */

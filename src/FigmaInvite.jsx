@@ -7,101 +7,19 @@ import { useWeddingCountdown } from "./hooks/useWeddingCountdown.js";
 import { FamilyTreeVisual } from "./components/FamilyTreeVisual.jsx";
 import { IconCelebration } from "./components/Icons/Icons.jsx";
 import { ScheduleVine } from "./components/ScheduleVine.jsx";
+import { LanguageSwitcher } from "./components/LanguageSwitcher/LanguageSwitcher.jsx";
+import { useI18n } from "./i18n/LanguageContext.jsx";
 import styles from "./FigmaInvite.module.css";
 
 const WEDDING_AT = new Date("2026-06-24T14:00:00");
 
-const WEDDING_DAY_SCHEDULE = [
-  {
-    time: "14:00",
-    datetime: "2026-06-24T14:00:00",
-    title: "Ceremony",
-    place: "Saint Anna Church, Abovyan St, Yerevan",
-    detail: "We exchange our vows surrounded by family and friends. Please silence phones and enjoy the moment with us.",
-    tag: "Vows",
-  },
-  {
-    time: "15:00",
-    datetime: "2026-06-24T15:00:00",
-    title: "Photo session",
-    place: "Saint Anna Church & grounds",
-    detail: "Portraits with us and the wedding party before everyone heads toward Art Village.",
-    tag: "Photos",
-  },
-  {
-    time: "17:00",
-    datetime: "2026-06-24T17:00:00",
-    title: "Guest arrival at the venue",
-    place: "Art Village Armenia, Ashtarak",
-    detail: "Welcome drinks, find your table, and settle in among the gardens before the evening unfolds.",
-    tag: "Arrival",
-  },
-  {
-    time: "17:30",
-    datetime: "2026-06-24T17:30:00",
-    title: "Cocktails & lemonade",
-    place: "Art Village, gardens & pavilion",
-    detail: "Signature cocktails, fresh lemonade, and light bites while the space fills with conversation.",
-    tag: "Reception",
-  },
-  {
-    time: "18:00",
-    datetime: "2026-06-24T18:00:00",
-    title: "Dinner is served",
-    place: "Art Village, celebration spaces",
-    detail: "Plated dinner, toasts from our nearest and dearest, and your chosen entrée.",
-    tag: "Feast",
-  },
-  {
-    time: "19:30",
-    datetime: "2026-06-24T19:30:00",
-    title: "First dance",
-    place: "Art Village Hall",
-    detail: "We open the dancing together under the lights, then the floor is yours.",
-    tag: "Dance",
-  },
-  {
-    time: "20:30",
-    datetime: "2026-06-24T20:30:00",
-    title: "Open dancing",
-    place: "Terrace & gardens",
-    detail: "DJ sets until late; cozy wraps if the evening turns cool.",
-    tag: "Party",
-  },
-  {
-    time: "21:00",
-    datetime: "2026-06-24T21:00:00",
-    title: "Cake",
-    place: "Art Village Hall",
-    detail: "Something sweet before the night carries on, join us for the cutting.",
-    tag: "Cake",
-  },
-  {
-    time: "22:30",
-    datetime: "2026-06-24T22:30:00",
-    title: "Sparkling toast",
-    place: "Art Village",
-    detail: "A glass of something sparkling with everyone, cheers to you for being here.",
-    tag: "Toast",
-  },
-];
-
-const ATTIRE_PALETTE_WOMEN = [
-  { hex: "#6b7d6e", name: "Sage", hint: "Midi & maxi dresses, soft linen, cool undertones" },
-  { hex: "#e8d9ce", name: "Blush", hint: "Dusty rose, mauve, and barely-there pink" },
-  { hex: "#c4a574", name: "Champagne", hint: "Metallic sheen, gold-beige, warm jewellery" },
-  { hex: "#d4c4a8", name: "Sand", hint: "Oat, stone, and warm cream separates" },
-  { hex: "#8b7d82", name: "Dusty mauve", hint: "Muted plum & taupe florals" },
-  { hex: "#5c6b62", name: "Eucalyptus", hint: "Blue-green silks & light crepe" },
-];
-
-const ATTIRE_PALETTE_MEN = [
-  { hex: "#1b3022", name: "Forest", hint: "Deep green or charcoal wool suits" },
-  { hex: "#3d5244", name: "Moss", hint: "Olive & sage tailoring, textured jackets" },
-  { hex: "#2a3540", name: "Midnight", hint: "Navy suit, crisp white or cream shirt" },
-  { hex: "#1a1a1a", name: "Black", hint: "Classic black suit or dinner jacket, always welcome" },
-  { hex: "#4a4a48", name: "Charcoal", hint: "Grey suit, matte black accessories" },
-  { hex: "#d4c4a8", name: "Sand", hint: "Linen blazer, tan chinos, light knit" },
+const NAV_IDS = [
+  { id: "home", key: "home" },
+  { id: "story", key: "story" },
+  { id: "events", key: "details" },
+  { id: "attire", key: "attire" },
+  { id: "schedule", key: "schedule" },
+  { id: "roots", key: "roots" },
 ];
 
 function Reveal({ as: Tag = "div", children, className = "", delayMs = 0, reducedMotion, ...rest }) {
@@ -118,16 +36,9 @@ function Reveal({ as: Tag = "div", children, className = "", delayMs = 0, reduce
   );
 }
 
-const NAV_LINKS = [
-  { id: "home", label: "Home" },
-  { id: "story", label: "Story" },
-  { id: "events", label: "Details" },
-  { id: "attire", label: "Attire" },
-  { id: "schedule", label: "Schedule" },
-  { id: "roots", label: "Roots" },
-];
-
 export default function FigmaInvite() {
+  const { lang, setLang, t } = useI18n();
+  const f = t.figma;
   const countdown = useWeddingCountdown(WEDDING_AT);
   const reducedMotion = useReducedMotion();
   const navScrolled = useScrollPast(40);
@@ -138,32 +49,42 @@ export default function FigmaInvite() {
   return (
     <div className={styles.page} data-motion={motion}>
       <header className={`${styles.topNav} ${navScrolled ? styles.topNavScrolled : ""}`.trim()}>
-        <p className={styles.logo}>
-          <span className={styles.logoName}>Karen</span>
-          <span className={styles.logoAmp}>&amp;</span>
-          <span className={styles.logoName}>Anna</span>
-        </p>
-        <nav aria-label="Primary">
-          <ul className={styles.navLinks}>
-            {NAV_LINKS.map(({ id, label }) => (
-              <li key={id}>
-                <a
-                  className={activeNavId === id ? styles.active : undefined}
-                  href={`#${id}`}
-                  aria-current={activeNavId === id ? "true" : undefined}
-                >
-                  {label}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </nav>
+        <div className={styles.topNavBrand}>
+          <p className={styles.logo}>
+            <span className={styles.logoName}>{f.logo.karen}</span>
+            <span className={styles.logoAmp}>&amp;</span>
+            <span className={styles.logoName}>{f.logo.anna}</span>
+          </p>
+          <LanguageSwitcher
+            lang={lang}
+            onChange={setLang}
+            labels={t.language}
+            variant="inline"
+          />
+        </div>
+        <div className={styles.topNavRight}>
+          <nav aria-label={f.nav.ariaLabel}>
+            <ul className={styles.navLinks}>
+              {NAV_IDS.map(({ id, key }) => (
+                <li key={id}>
+                  <a
+                    className={activeNavId === id ? styles.active : undefined}
+                    href={`#${id}`}
+                    aria-current={activeNavId === id ? "true" : undefined}
+                  >
+                    {f.nav[key]}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        </div>
       </header>
 
       <section
         id="home"
         className={`${styles.hero} ${styles.heroLetterOpened} ${styles.heroUnified}`.trim()}
-        aria-label="Welcome"
+        aria-label={f.hero.ariaSection}
       >
         <div className={styles.heroLetterPaper} aria-hidden />
         <div className={styles.heroUnifiedInner}>
@@ -183,34 +104,34 @@ export default function FigmaInvite() {
           </figure>
           <div className={styles.heroLetterPanel}>
             <div className={styles.heroContent}>
-              <p className={styles.heroKicker}>You are invited to the wedding of</p>
-              <h1 className={styles.heroTitle}>Karen &amp; Anna</h1>
-              <p className={styles.heroDate}>June 24, 2026</p>
+              <p className={styles.heroKicker}>{f.hero.kicker}</p>
+              <h1 className={styles.heroTitle}>{f.hero.title}</h1>
+              <p className={styles.heroDate}>{f.hero.dateLine}</p>
               <hr className={styles.heroRule} />
               {countdown.passed ? (
                 <p className={`${styles.heroDate} ${styles.heroAfterRule}`} style={{ fontSize: "1.125rem" }}>
-                  With love, thank you for celebrating with us.
+                  {f.hero.thankYouPassed}
                 </p>
               ) : (
                 <div className={`${styles.countdown} ${styles.heroAfterRule}`} aria-live="polite">
                   <div className={styles.countItem}>
                     <p className={styles.countNum}>{countdown.days}</p>
-                    <p className={styles.countLabel}>Days</p>
+                    <p className={styles.countLabel}>{f.hero.days}</p>
                   </div>
                   <div className={styles.countItem}>
                     <p className={styles.countNum}>{countdown.hours}</p>
-                    <p className={styles.countLabel}>Hours</p>
+                    <p className={styles.countLabel}>{f.hero.hours}</p>
                   </div>
                   <div className={styles.countItem}>
                     <p className={styles.countNum}>{countdown.mins}</p>
-                    <p className={styles.countLabel}>Mins</p>
+                    <p className={styles.countLabel}>{f.hero.mins}</p>
                   </div>
                 </div>
               )}
             </div>
           </div>
         </div>
-        <a href="#story" className={styles.heroChevron} aria-label="Scroll to story">
+        <a href="#story" className={styles.heroChevron} aria-label={f.hero.chevronAria}>
           <img src={figmaAssets.chevronDown} alt="" width={12} height={7} />
         </a>
       </section>
@@ -219,36 +140,21 @@ export default function FigmaInvite() {
         <div className={styles.storyGrid}>
           <Reveal reducedMotion={reducedMotion}>
             <div>
-              <p className={styles.storyEyebrow}>Our Journey</p>
-              <h2 className={styles.storyHeading}>
-                How we found each other, and kept choosing one another.
-              </h2>
-              <p className={styles.storyLead}>
-                Ours began in the most ordinary kind of room, a meeting at the office, and grew from
-                there into something neither of us saw coming, until one birthday changed everything.
-              </p>
+              <p className={styles.storyEyebrow}>{f.story.eyebrow}</p>
+              <h2 className={styles.storyHeading}>{f.story.heading}</h2>
+              <p className={styles.storyLead}>{f.story.lead}</p>
               <div className={styles.timeline}>
                 <article className={styles.timelineItem}>
                   <span className={styles.timelineDot} aria-hidden />
-                  <h3>The First Hello</h3>
-                  <p className={styles.timelineMeta}>March 28 • The office where we work</p>
-                  <p className={styles.timelineBody}>
-                    We met across a conference table: Karen as project manager, Anna as frontend
-                    developer. It was just another work meeting, until the conversation lingered, and
-                    the professional line between us quietly softened into curiosity, then friendship,
-                    then something neither agenda nor calendar had planned.
-                  </p>
+                  <h3>{f.story.t1Title}</h3>
+                  <p className={styles.timelineMeta}>{f.story.t1Meta}</p>
+                  <p className={styles.timelineBody}>{f.story.t1Body}</p>
                 </article>
                 <article className={styles.timelineItem}>
                   <span className={styles.timelineDot} aria-hidden />
-                  <h3>The Proposal</h3>
-                  <p className={styles.timelineMeta}>September 8 • Karen&apos;s birthday</p>
-                  <p className={styles.timelineBody}>
-                    Anna chose a day Karen thought was only about cake and candles, her birthday, when
-                    she wasn&apos;t watching for a ring or a speech. In that unguarded, happy moment, the
-                    question landed: not in a grand production, but in the middle of real life, when
-                    love felt safest and most surprising all at once.
-                  </p>
+                  <h3>{f.story.t2Title}</h3>
+                  <p className={styles.timelineMeta}>{f.story.t2Meta}</p>
+                  <p className={styles.timelineBody}>{f.story.t2Body}</p>
                 </article>
               </div>
             </div>
@@ -258,25 +164,13 @@ export default function FigmaInvite() {
               <div className={styles.storyPhotosBlur} aria-hidden />
               <div className={styles.photoGrid}>
                 <div className={`${styles.photoCard} ${styles.photoCardHero}`.trim()}>
-                  <img
-                    src={figmaAssets.storyPhotoPortrait}
-                    alt="Karen and Anna, portrait"
-                    decoding="async"
-                  />
+                  <img src={figmaAssets.storyPhotoPortrait} alt={f.story.altPortrait} decoding="async" />
                 </div>
                 <div className={`${styles.photoCard} ${styles.photoCardStack}`.trim()}>
-                  <img
-                    src={figmaAssets.storyPhotoRight}
-                    alt="Karen and Anna in Rome"
-                    decoding="async"
-                  />
+                  <img src={figmaAssets.storyPhotoRight} alt={f.story.altRome} decoding="async" />
                 </div>
                 <div className={`${styles.photoCard} ${styles.photoCardStack}`.trim()}>
-                  <img
-                    src={figmaAssets.storyPhotoLeft}
-                    alt="Karen and Anna overlooking the city"
-                    decoding="async"
-                  />
+                  <img src={figmaAssets.storyPhotoLeft} alt={f.story.altCity} decoding="async" />
                 </div>
               </div>
             </div>
@@ -288,8 +182,8 @@ export default function FigmaInvite() {
         <div className={styles.eventsInner}>
           <Reveal reducedMotion={reducedMotion}>
             <header className={styles.eventsHeader}>
-              <p className={styles.eventsEyebrow}>The Celebration</p>
-              <h2 className={styles.eventsTitle}>Where and When</h2>
+              <p className={styles.eventsEyebrow}>{f.events.eyebrow}</p>
+              <h2 className={styles.eventsTitle}>{f.events.title}</h2>
             </header>
           </Reveal>
           <div className={styles.eventCards}>
@@ -298,26 +192,24 @@ export default function FigmaInvite() {
                 <div className={styles.eventCardTop}>
                   <div>
                     <img src={figmaAssets.iconCeremony} alt="" width={29} height={31} />
-                    <h3>The Ceremony</h3>
+                    <h3>{f.events.ceremonyTitle}</h3>
                   </div>
                   <p className={styles.eventTime}>14:00</p>
                 </div>
-                <p className={styles.eventQuote}>
-                  &ldquo;A sacred union amidst the soft whispers of stone and spirit.&rdquo;
-                </p>
+                <p className={styles.eventQuote}>&ldquo;{f.events.ceremonyQuote}&rdquo;</p>
                 <div>
                   <div className={styles.eventLocation}>
                     <img src={figmaAssets.iconPinCeremony} alt="" width={15} height={19} />
                     <div className={styles.eventLocationText}>
-                      <p className={styles.eventVenueName}>Saint Anna Church</p>
-                      <p className={styles.eventAddress}>Abovyan St, Yerevan, Armenia</p>
+                      <p className={styles.eventVenueName}>{f.events.ceremonyVenue}</p>
+                      <p className={styles.eventAddress}>{f.events.ceremonyAddress}</p>
                       <a
                         className={styles.eventVenueLink}
                         href={venueLinks.saintAnnaGoogleMaps}
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        Open in Google Maps
+                        {f.events.openMaps}
                       </a>
                     </div>
                   </div>
@@ -327,11 +219,7 @@ export default function FigmaInvite() {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <img
-                      src={figmaAssets.ceremonyMap}
-                      alt="Saint Anna Church (Katoghike), Abovyan Street, Yerevan"
-                      decoding="async"
-                    />
+                    <img src={figmaAssets.ceremonyMap} alt={f.events.mapAltCeremony} decoding="async" />
                     <div className={styles.eventMapTint} aria-hidden />
                   </a>
                 </div>
@@ -342,21 +230,17 @@ export default function FigmaInvite() {
                 <div className={styles.eventCardTop}>
                   <div>
                     <IconCelebration className={styles.eventCelebrationIcon} />
-                    <h3>The Celebration</h3>
+                    <h3>{f.events.celebrationTitle}</h3>
                   </div>
                   <p className={styles.eventTime}>17:00</p>
                 </div>
-                <p className={styles.eventQuote}>
-                  &ldquo;Dining where gardens and open sky meet, at Art Village Armenia.&rdquo;
-                </p>
+                <p className={styles.eventQuote}>&ldquo;{f.events.celebrationQuote}&rdquo;</p>
                 <div>
                   <div className={styles.eventLocation}>
                     <img src={figmaAssets.iconPinReception} alt="" width={21} height={19} />
                     <div className={styles.eventLocationText}>
-                      <p className={styles.eventVenueName}>Art Village Armenia</p>
-                      <p className={styles.eventAddress}>
-                        Aragatsotn Province, Ashtarak Municipality, plot 25
-                      </p>
+                      <p className={styles.eventVenueName}>{f.events.receptionVenue}</p>
+                      <p className={styles.eventAddress}>{f.events.receptionAddress}</p>
                       <div className={styles.eventVenueLinkRow}>
                         <a
                           className={styles.eventVenueLink}
@@ -375,7 +259,7 @@ export default function FigmaInvite() {
                           target="_blank"
                           rel="noopener noreferrer"
                         >
-                          Open in Google Maps
+                          {f.events.openMaps}
                         </a>
                       </div>
                     </div>
@@ -386,11 +270,7 @@ export default function FigmaInvite() {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <img
-                      src={figmaAssets.receptionMap}
-                      alt="Art Village Armenia, event venue and gardens"
-                      decoding="async"
-                    />
+                    <img src={figmaAssets.receptionMap} alt={f.events.mapAltReception} decoding="async" />
                     <div className={styles.eventMapTint} aria-hidden />
                   </a>
                 </div>
@@ -404,14 +284,11 @@ export default function FigmaInvite() {
         <div className={styles.attireBand}>
           <div className={styles.attireBandInner}>
             <Reveal reducedMotion={reducedMotion}>
-              <p className={styles.attireBandEyebrow}>Dress the part</p>
+              <p className={styles.attireBandEyebrow}>{f.attire.eyebrow}</p>
               <h2 id="attire-heading" className={styles.attireBandTitle}>
-                What to wear &amp; which colours feel at home
+                {f.attire.title}
               </h2>
-              <p className={styles.attireBandLead}>
-                Garden formal with a whisper of the woods, think movement, texture, and tones that belong
-                beside stone, grass, and candlelight.
-              </p>
+              <p className={styles.attireBandLead}>{f.attire.lead}</p>
             </Reveal>
           </div>
         </div>
@@ -420,40 +297,16 @@ export default function FigmaInvite() {
           <div className={styles.attireLayout}>
             <Reveal reducedMotion={reducedMotion} delayMs={60}>
               <article className={styles.attireDressCard}>
-                <span className={styles.attireCardKicker}>The code</span>
-                <h3 className={styles.attireCardTitle}>Garden formal</h3>
-                <p className={styles.attireCardText}>
-                  Think of the day in two chapters: the ceremony at Saint Anna, then celebration among the
-                  gardens and halls of Art Village. Long or midi dresses, tailored suits, and polished
-                  separates all feel at home, we love when you dress up a little, in whatever shape that
-                  takes for you.
-                </p>
-                <p className={styles.attireCardText}>
-                  Layers are your friend: June light can be warm, and the evening may cool once the sun
-                  drops. Nothing has to match perfectly; we care most that you feel comfortable moving from
-                  stone and pew to lawn, terrace, and dance floor without a second thought.
-                </p>
+                <span className={styles.attireCardKicker}>{f.attire.codeKicker}</span>
+                <h3 className={styles.attireCardTitle}>{f.attire.codeTitle}</h3>
+                <p className={styles.attireCardText}>{f.attire.codeP1}</p>
+                <p className={styles.attireCardText}>{f.attire.codeP2}</p>
                 <ul className={styles.attireMiniList}>
-                  <li>
-                    Fabrics that breathe: linen, silk, light wool, crepe, anything that drapes and moves
-                    with you through a long, happy day
-                  </li>
-                  <li>
-                    Heels are welcome; a block heel, wedge, or elegant flat will be kinder on grass and
-                    gravel between venues
-                  </li>
-                  <li>
-                    For suits, black is absolutely welcome, alongside navy, charcoal, greens, or anything
-                    in the palette below. A well-fitted jacket and trousers (or refined separates)
-                    photographs beautifully beside softer dress tones
-                  </li>
-                  <li>
-                    A wrap, shawl, or light jacket for after sunset, especially if you run cool when the
-                    music starts
-                  </li>
-                  <li>
-                    Small bag or clutch is plenty; you won&apos;t need to carry much once you&apos;re with us
-                  </li>
+                  <li>{f.attire.bullet1}</li>
+                  <li>{f.attire.bullet2}</li>
+                  <li>{f.attire.bullet3}</li>
+                  <li>{f.attire.bullet4}</li>
+                  <li>{f.attire.bullet5}</li>
                 </ul>
               </article>
             </Reveal>
@@ -461,18 +314,15 @@ export default function FigmaInvite() {
             <Reveal reducedMotion={reducedMotion} delayMs={120}>
               <div className={styles.attirePaletteCard}>
                 <div className={styles.attirePaletteHeader}>
-                  <span className={styles.attireCardKicker}>Palette</span>
-                  <h3 className={styles.attirePaletteTitle}>Colours we&apos;re dreaming of</h3>
-                  <p className={styles.attirePaletteSub}>
-                    Two gentle ranges below, pick what feels like you. They sit in the same garden, so
-                    everyone still photographs beautifully together.
-                  </p>
+                  <span className={styles.attireCardKicker}>{f.attire.paletteKicker}</span>
+                  <h3 className={styles.attirePaletteTitle}>{f.attire.paletteTitle}</h3>
+                  <p className={styles.attirePaletteSub}>{f.attire.paletteSub}</p>
                 </div>
                 <div className={styles.attirePaletteGroups}>
                   <div className={styles.attirePaletteGroup}>
-                    <h4 className={styles.attirePaletteGroupTitle}>For her</h4>
-                    <ul className={styles.attireSwatchRow} aria-label="Suggested colours for women">
-                      {ATTIRE_PALETTE_WOMEN.map((c) => (
+                    <h4 className={styles.attirePaletteGroupTitle}>{f.attire.forHer}</h4>
+                    <ul className={styles.attireSwatchRow} aria-label={f.attire.womenAria}>
+                      {f.attire.paletteWomen.map((c) => (
                         <li key={`w-${c.hex}-${c.name}`} className={styles.attireSwatchItem}>
                           <span
                             className={styles.attireSwatch}
@@ -486,9 +336,9 @@ export default function FigmaInvite() {
                     </ul>
                   </div>
                   <div className={styles.attirePaletteGroup}>
-                    <h4 className={styles.attirePaletteGroupTitle}>For him</h4>
-                    <ul className={styles.attireSwatchRow} aria-label="Suggested colours for men">
-                      {ATTIRE_PALETTE_MEN.map((c) => (
+                    <h4 className={styles.attirePaletteGroupTitle}>{f.attire.forHim}</h4>
+                    <ul className={styles.attireSwatchRow} aria-label={f.attire.menAria}>
+                      {f.attire.paletteMen.map((c) => (
                         <li key={`m-${c.hex}-${c.name}`} className={styles.attireSwatchItem}>
                           <span
                             className={styles.attireSwatch}
@@ -507,20 +357,16 @@ export default function FigmaInvite() {
           </div>
 
           <Reveal reducedMotion={reducedMotion} delayMs={90}>
-            <aside className={styles.attireWhiteTeaseWrap} aria-label="Note on wearing white">
+            <aside className={styles.attireWhiteTeaseWrap} aria-label={f.attire.whiteTeaseAria}>
               <div className={styles.attireWhiteTeaseCard}>
                 <div className={styles.attireTeaseQuestionsRow}>
-                  <span className={styles.attireWhiteTeaseLabel}>A tiny rule, with humour</span>
-                  <p className={styles.attireFootnoteInline}>
-                    Questions? Wear what makes you feel handsome, radiant, and ready to celebrate, if you&apos;re
-                    close to either palette above, you&apos;re already perfect.
-                  </p>
+                  <span className={styles.attireWhiteTeaseLabel}>{f.attire.whiteTeaseLabel}</span>
+                  <p className={styles.attireFootnoteInline}>{f.attire.whiteTeaseInline}</p>
                 </div>
                 <p className={styles.attireWhiteTease}>
-                  To the women joining us: white and ivory are on a <em>very</em> exclusive guest list, it
-                  caps at two, and we already filled both seats. If your outfit could moonlight in a detergent
-                  ad or upstage us at the altar, please aim for literally any other colour. We promise we&apos;ll
-                  still gasp at how good you look, just not because you&apos;re wearing our signature shade.
+                  {f.attire.whiteTeaseBefore}
+                  <em>{f.attire.whiteTeaseEm}</em>
+                  {f.attire.whiteTeaseAfter}
                 </p>
               </div>
             </aside>
@@ -532,44 +378,41 @@ export default function FigmaInvite() {
         <div className={styles.scheduleInner}>
           <Reveal reducedMotion={reducedMotion}>
             <header className={styles.scheduleHeader}>
-              <p className={styles.scheduleEyebrow}>The Day Unfolds</p>
+              <p className={styles.scheduleEyebrow}>{f.schedule.eyebrow}</p>
               <h2 id="schedule-heading" className={styles.scheduleTitle}>
-                Wedding day schedule
+                {f.schedule.title}
               </h2>
-              <p className={styles.scheduleSub}>
-                Everything you need to know about where to be and when, times are a gentle guide; we&apos;ll
-                keep you looked after from arrival to send-off.
-              </p>
+              <p className={styles.scheduleSub}>{f.schedule.sub}</p>
             </header>
           </Reveal>
           <div className={styles.scheduleFlow}>
             <div className={styles.scheduleTrack}>
               <ScheduleVine className={styles.scheduleVine} />
               <ol className={styles.scheduleList}>
-              {WEDDING_DAY_SCHEDULE.map((row, i) => {
-                const side = i % 2 === 0 ? styles.scheduleItemStart : styles.scheduleItemEnd;
-                return (
-                  <Reveal
-                    key={row.time + row.title}
-                    as="li"
-                    className={`${styles.scheduleItem} ${side}`.trim()}
-                    reducedMotion={reducedMotion}
-                    delayMs={i * 36}
-                  >
-                    <div className={styles.scheduleRow}>
-                      <time className={styles.scheduleTime} dateTime={row.datetime}>
-                        <span className={styles.scheduleTimeInner}>{row.time}</span>
-                      </time>
-                      <div className={styles.scheduleCard}>
-                        <h3 className={styles.scheduleCardTitle}>{row.title}</h3>
-                        <p className={styles.schedulePlace}>{row.place}</p>
-                        <p className={styles.scheduleDetail}>{row.detail}</p>
-                        <span className={styles.scheduleTag}>{row.tag}</span>
+                {f.schedule.rows.map((row, i) => {
+                  const side = i % 2 === 0 ? styles.scheduleItemStart : styles.scheduleItemEnd;
+                  return (
+                    <Reveal
+                      key={row.datetime + row.title}
+                      as="li"
+                      className={`${styles.scheduleItem} ${side}`.trim()}
+                      reducedMotion={reducedMotion}
+                      delayMs={i * 36}
+                    >
+                      <div className={styles.scheduleRow}>
+                        <time className={styles.scheduleTime} dateTime={row.datetime}>
+                          <span className={styles.scheduleTimeInner}>{row.time}</span>
+                        </time>
+                        <div className={styles.scheduleCard}>
+                          <h3 className={styles.scheduleCardTitle}>{row.title}</h3>
+                          <p className={styles.schedulePlace}>{row.place}</p>
+                          <p className={styles.scheduleDetail}>{row.detail}</p>
+                          <span className={styles.scheduleTag}>{row.tag}</span>
+                        </div>
                       </div>
-                    </div>
-                  </Reveal>
-                );
-              })}
+                    </Reveal>
+                  );
+                })}
               </ol>
             </div>
           </div>
@@ -588,25 +431,19 @@ export default function FigmaInvite() {
             </Reveal>
             <Reveal reducedMotion={reducedMotion}>
               <div className={styles.rootsCopy}>
-                <p className={styles.rootsEyebrow}>Two families, one canopy</p>
+                <p className={styles.rootsEyebrow}>{f.roots.eyebrow}</p>
                 <h2 id="roots-heading" className={styles.rootsHeading}>
-                  Rooted together
+                  {f.roots.heading}
                 </h2>
-                <p className={styles.rootsSubline}>Growing a new branch of family.</p>
-                <p className={styles.rootsLead}>
-                  For us, marriage is more than a vow between two people. It gathers the stories, tables, and
-                  traditions we each grew up with, two family trees leaning close until their branches meet, and
-                  something altogether new has room to grow.
-                </p>
+                <p className={styles.rootsSubline}>{f.roots.subline}</p>
+                <p className={styles.rootsLead}>{f.roots.lead}</p>
                 <blockquote className={styles.rootsQuote}>
-                  <p>
-                    We carry the love that raised us into the home we&apos;re building side by side.
-                  </p>
+                  <p>{f.roots.quote}</p>
                 </blockquote>
                 <ul className={styles.rootsList}>
-                  <li>Honoring the parents and elders who taught us how to love well.</li>
-                  <li>Celebrating cousins, siblings, and friends who already feel like kin.</li>
-                  <li>Looking ahead to the memories we&apos;ll make, anniversaries, holidays, and ordinary Tuesdays.</li>
+                  <li>{f.roots.li1}</li>
+                  <li>{f.roots.li2}</li>
+                  <li>{f.roots.li3}</li>
                 </ul>
               </div>
             </Reveal>
@@ -616,27 +453,15 @@ export default function FigmaInvite() {
 
       <Reveal reducedMotion={reducedMotion}>
         <footer className={styles.footer}>
-          <p className={styles.footerNames}>Karen &amp; Anna</p>
+          <p className={styles.footerNames}>{f.footer.names}</p>
           <ul className={styles.footerLinks}>
-            <li>
-              <a href="#schedule">Schedule</a>
-            </li>
-            <li>
-              <a href="#attire">Attire</a>
-            </li>
-            <li>
-              <a href="#events">Location</a>
-            </li>
-            <li>
-              <a href="https://instagram.com" rel="noreferrer" target="_blank">
-                Instagram
-              </a>
-            </li>
-            <li>
-              <a href="#home">Privacy</a>
-            </li>
+            {NAV_IDS.map(({ id, key }) => (
+              <li key={id}>
+                <a href={`#${id}`}>{f.nav[key]}</a>
+              </li>
+            ))}
           </ul>
-          <p className={styles.footerLegal}>© 2026 Karen &amp; Anna. Made with love.</p>
+          <p className={styles.footerLegal}>{f.footer.legal}</p>
         </footer>
       </Reveal>
     </div>
