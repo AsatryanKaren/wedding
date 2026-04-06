@@ -1,7 +1,12 @@
 import { useEffect, useState } from "react";
 
 export function useWeddingCountdown(targetDate) {
-  const [parts, setParts] = useState({ days: 0, hours: 0, mins: 0, passed: false });
+  const [parts, setParts] = useState({
+    days: 0,
+    hours: 0,
+    mins: 0,
+    passed: false,
+  });
 
   useEffect(() => {
     const end = targetDate.getTime();
@@ -14,7 +19,9 @@ export function useWeddingCountdown(targetDate) {
         return;
       }
       const days = Math.floor(diff / (24 * 60 * 60 * 1000));
-      const hours = Math.floor((diff % (24 * 60 * 60 * 1000)) / (60 * 60 * 1000));
+      const hours = Math.floor(
+        (diff % (24 * 60 * 60 * 1000)) / (60 * 60 * 1000),
+      );
       const mins = Math.floor((diff % (60 * 60 * 1000)) / (60 * 1000));
       setParts({ days, hours, mins, passed: false });
     }

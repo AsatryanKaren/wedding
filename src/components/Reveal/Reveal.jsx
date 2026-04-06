@@ -1,7 +1,12 @@
 import { useInView } from "../../hooks/useInView.js";
 import styles from "./Reveal.module.css";
 
-export function Reveal({ as: As = "div", children, className = "", delayMs = 0 }) {
+export function Reveal({
+  as: As = "div",
+  children,
+  className = "",
+  delayMs = 0,
+}) {
   const { ref, inView } = useInView();
   return (
     <As
@@ -13,4 +18,3 @@ export function Reveal({ as: As = "div", children, className = "", delayMs = 0 }
     </As>
   );
 }
-

@@ -2,14 +2,20 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { GlobalOutlined } from "../Icons/GlobalOutlined.jsx";
 import styles from "./LanguageSwitcher.module.css";
 
-export function LanguageSwitcher({ lang, onChange, labels, variant = "inline" }) {
+export function LanguageSwitcher({
+  lang,
+  onChange,
+  labels,
+  variant = "inline",
+}) {
   const [open, setOpen] = useState(false);
   const wrapRef = useRef(null);
 
   useEffect(() => {
     if (!open) return;
     const onDoc = (e) => {
-      if (wrapRef.current && !wrapRef.current.contains(e.target)) setOpen(false);
+      if (wrapRef.current && !wrapRef.current.contains(e.target))
+        setOpen(false);
     };
     const onKey = (e) => {
       if (e.key === "Escape") setOpen(false);
@@ -27,11 +33,13 @@ export function LanguageSwitcher({ lang, onChange, labels, variant = "inline" })
       onChange(code);
       setOpen(false);
     },
-    [onChange]
+    [onChange],
   );
 
   const rootClass =
-    variant === "inline" ? `${styles.root} ${styles.rootInline}` : `${styles.root} ${styles.rootBar}`;
+    variant === "inline"
+      ? `${styles.root} ${styles.rootInline}`
+      : `${styles.root} ${styles.rootBar}`;
 
   return (
     <div ref={wrapRef} className={rootClass}>
@@ -68,6 +76,17 @@ export function LanguageSwitcher({ lang, onChange, labels, variant = "inline" })
               onClick={() => pick("en")}
             >
               {labels.en}
+            </button>
+          </li>
+          <li role="presentation">
+            <button
+              type="button"
+              role="menuitemradio"
+              aria-checked={lang === "ru"}
+              className={`${styles.menuBtn} ${lang === "ru" ? styles.menuBtnActive : ""}`}
+              onClick={() => pick("ru")}
+            >
+              {labels.ru}
             </button>
           </li>
         </ul>

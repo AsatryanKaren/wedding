@@ -18,12 +18,26 @@ export function ScheduleVine({ className }) {
       aria-hidden
     >
       <defs>
-        <linearGradient id={`sv-stroke-${uid}`} x1="0" y1="0" x2="120" y2="0" gradientUnits="userSpaceOnUse">
+        <linearGradient
+          id={`sv-stroke-${uid}`}
+          x1="0"
+          y1="0"
+          x2="120"
+          y2="0"
+          gradientUnits="userSpaceOnUse"
+        >
           <stop stopColor="#735c00" stopOpacity="0.2" />
           <stop offset="0.45" stopColor="#4d6453" stopOpacity="0.38" />
           <stop offset="1" stopColor="#735c00" stopOpacity="0.18" />
         </linearGradient>
-        <linearGradient id={`sv-glow-${uid}`} x1="60" y1="0" x2="60" y2="1000" gradientUnits="userSpaceOnUse">
+        <linearGradient
+          id={`sv-glow-${uid}`}
+          x1="60"
+          y1="0"
+          x2="60"
+          y2="1000"
+          gradientUnits="userSpaceOnUse"
+        >
           <stop stopColor="#d0e9d4" stopOpacity="0" />
           <stop offset="0.5" stopColor="#d0e9d4" stopOpacity="0.35" />
           <stop offset="1" stopColor="#d0e9d4" stopOpacity="0" />

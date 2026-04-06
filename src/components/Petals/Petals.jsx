@@ -37,11 +37,10 @@ export function Petals({ count = 8, seed = 2406 }) {
             "--d": `${p.d}ms`,
             "--t": `${p.t}ms`,
             "--r": `${p.r}deg`,
-            "--x": `${p.drift}px`
+            "--x": `${p.drift}px`,
           }}
         />
       ))}
     </div>
   );
 }
-

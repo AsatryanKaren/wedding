@@ -26,4 +26,3 @@ export function IntimateNote({ t }) {
     </section>
   );
 }
-

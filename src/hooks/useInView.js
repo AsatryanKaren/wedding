@@ -1,6 +1,9 @@
 import { useEffect, useRef, useState } from "react";
 
-export function useInView({ rootMargin = "0px 0px -10% 0px", threshold = 0.12 } = {}) {
+export function useInView({
+  rootMargin = "0px 0px -10% 0px",
+  threshold = 0.12,
+} = {}) {
   const ref = useRef(null);
   const [inView, setInView] = useState(false);
 
@@ -16,7 +19,7 @@ export function useInView({ rootMargin = "0px 0px -10% 0px", threshold = 0.12 } 
           obs.disconnect();
         }
       },
-      { root: null, rootMargin, threshold }
+      { root: null, rootMargin, threshold },
     );
 
     obs.observe(el);
@@ -25,4 +28,3 @@ export function useInView({ rootMargin = "0px 0px -10% 0px", threshold = 0.12 } 
 
   return { ref, inView };
 }
-

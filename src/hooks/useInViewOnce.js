@@ -5,7 +5,11 @@ import { useEffect, useRef, useState } from "react";
  */
 export function useInViewOnce(options = {}) {
   const ref = useRef(null);
-  const { rootMargin = "0px 0px -10% 0px", threshold = 0.08, disabled = false } = options;
+  const {
+    rootMargin = "0px 0px -10% 0px",
+    threshold = 0.08,
+    disabled = false,
+  } = options;
   const [visible, setVisible] = useState(() => Boolean(disabled));
 
   useEffect(() => {
@@ -25,7 +29,7 @@ export function useInViewOnce(options = {}) {
           io.disconnect();
         }
       },
-      { rootMargin, threshold }
+      { rootMargin, threshold },
     );
 
     io.observe(el);

@@ -2,7 +2,11 @@
  * Ant Design "GlobalOutlined" globe glyph (same path as @ant-design/icons-svg).
  * License: MIT — https://github.com/ant-design/ant-design-icons
  */
-export function GlobalOutlined({ className, style, "aria-hidden": ariaHidden }) {
+export function GlobalOutlined({
+  className,
+  style,
+  "aria-hidden": ariaHidden,
+}) {
   return (
     <svg
       viewBox="64 64 896 896"

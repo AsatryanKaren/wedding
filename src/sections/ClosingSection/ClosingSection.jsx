@@ -5,7 +5,10 @@ import { Ornament } from "../../components/Ornament/Ornament.jsx";
 
 export function ClosingSection({ t }) {
   return (
-    <section className={`${shared.section} ${styles.section}`} aria-label={t.closing.title}>
+    <section
+      className={`${shared.section} ${styles.section}`}
+      aria-label={t.closing.title}
+    >
       <div className={styles.bg} aria-hidden="true" />
 
       <Reveal className={styles.center}>
@@ -17,4 +20,3 @@ export function ClosingSection({ t }) {
     </section>
   );
 }
-

@@ -1,6 +1,13 @@
 export function IconCalendar(props) {
   return (
-    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" aria-hidden="true" {...props}>
+    <svg
+      viewBox="0 0 24 24"
+      width="22"
+      height="22"
+      fill="none"
+      aria-hidden="true"
+      {...props}
+    >
       <path
         d="M7 3v3M17 3v3M4.5 8.5h15"
         stroke="currentColor"
@@ -13,14 +20,27 @@ export function IconCalendar(props) {
         strokeWidth="1.4"
         opacity=".9"
       />
-      <path d="M8 12.2h3.3M8 15.6h6.6" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" opacity=".85" />
+      <path
+        d="M8 12.2h3.3M8 15.6h6.6"
+        stroke="currentColor"
+        strokeWidth="1.4"
+        strokeLinecap="round"
+        opacity=".85"
+      />
     </svg>
   );
 }
 
 export function IconClock(props) {
   return (
-    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" aria-hidden="true" {...props}>
+    <svg
+      viewBox="0 0 24 24"
+      width="22"
+      height="22"
+      fill="none"
+      aria-hidden="true"
+      {...props}
+    >
       <path
         d="M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20Z"
         stroke="currentColor"
@@ -39,8 +59,20 @@ export function IconClock(props) {
 
 export function IconChurch(props) {
   return (
-    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" aria-hidden="true" {...props}>
-      <path d="M12 2.5v5" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
+    <svg
+      viewBox="0 0 24 24"
+      width="22"
+      height="22"
+      fill="none"
+      aria-hidden="true"
+      {...props}
+    >
+      <path
+        d="M12 2.5v5"
+        stroke="currentColor"
+        strokeWidth="1.4"
+        strokeLinecap="round"
+      />
       <path
         d="M9.7 4.8h4.6"
         stroke="currentColor"
@@ -60,7 +92,13 @@ export function IconChurch(props) {
         strokeWidth="1.4"
         strokeLinecap="round"
       />
-      <path d="M9.4 12.2h5.2" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" opacity=".8" />
+      <path
+        d="M9.4 12.2h5.2"
+        stroke="currentColor"
+        strokeWidth="1.4"
+        strokeLinecap="round"
+        opacity=".8"
+      />
     </svg>
   );
 }
@@ -75,7 +113,12 @@ export function IconCelebration(props) {
         strokeWidth="1.4"
         strokeLinejoin="round"
       />
-      <path d="M12 11v6.5M9.85 18h4.3" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
+      <path
+        d="M12 11v6.5M9.85 18h4.3"
+        stroke="currentColor"
+        strokeWidth="1.4"
+        strokeLinecap="round"
+      />
       <path
         d="M17.5 3.8v2.4M16.3 5h2.4M19.8 9.5l1.35 1.35M20.45 8.15v2.7M21.8 9.5h-2.7"
         stroke="currentColor"
@@ -89,7 +132,14 @@ export function IconCelebration(props) {
 
 export function IconPin(props) {
   return (
-    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" aria-hidden="true" {...props}>
+    <svg
+      viewBox="0 0 24 24"
+      width="22"
+      height="22"
+      fill="none"
+      aria-hidden="true"
+      {...props}
+    >
       <path
         d="M12 22s7-4.6 7-12a7 7 0 1 0-14 0c0 7.4 7 12 7 12Z"
         stroke="currentColor"
@@ -104,4 +154,3 @@ export function IconPin(props) {
     </svg>
   );
 }
-

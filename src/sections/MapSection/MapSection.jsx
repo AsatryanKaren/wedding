@@ -29,7 +29,12 @@ export function MapSection({ t }) {
           />
         </div>
         <div className={styles.actions}>
-          <a className={styles.btn} href={mapsUrl} target="_blank" rel="noreferrer">
+          <a
+            className={styles.btn}
+            href={mapsUrl}
+            target="_blank"
+            rel="noreferrer"
+          >
             {t.map.openInMaps}
           </a>
           <div className={styles.note}>{t.map.embedNote}</div>
@@ -38,4 +43,3 @@ export function MapSection({ t }) {
     </section>
   );
 }
-

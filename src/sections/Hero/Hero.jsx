@@ -42,7 +42,11 @@ export function Hero({ t, lang }) {
   const showCountdown = msLeft > 0 && msLeft < 1000 * 60 * 60 * 24 * 300;
 
   return (
-    <section className={styles.hero} aria-label={t.hero.ariaLabel} data-loaded={loaded ? "1" : "0"}>
+    <section
+      className={styles.hero}
+      aria-label={t.hero.ariaLabel}
+      data-loaded={loaded ? "1" : "0"}
+    >
       <div className={styles.bg} aria-hidden="true">
         <div className={styles.bgFade} />
         <Particles count={18} seed={24} />
@@ -51,7 +55,11 @@ export function Hero({ t, lang }) {
       </div>
 
       <div className={styles.frame} aria-hidden="true">
-        <svg viewBox="0 0 1000 520" className={styles.frameSvg} xmlns="http://www.w3.org/2000/svg">
+        <svg
+          viewBox="0 0 1000 520"
+          className={styles.frameSvg}
+          xmlns="http://www.w3.org/2000/svg"
+        >
           <rect x="34" y="34" width="932" height="452" rx="26" />
         </svg>
       </div>
@@ -94,12 +102,20 @@ export function Hero({ t, lang }) {
 
         {showCountdown ? (
           <div className={styles.countdown} aria-label={t.hero.countdownLabel}>
-            <span className={styles.countdownLabel}>{t.hero.countdownLabel}</span>
-            <span className={styles.countdownValue}>{formatCountdown(msLeft, lang)}</span>
+            <span className={styles.countdownLabel}>
+              {t.hero.countdownLabel}
+            </span>
+            <span className={styles.countdownValue}>
+              {formatCountdown(msLeft, lang)}
+            </span>
           </div>
         ) : null}
 
-        <a className={styles.scroll} href="#invitation" aria-label={t.hero.scrollHint}>
+        <a
+          className={styles.scroll}
+          href="#invitation"
+          aria-label={t.hero.scrollHint}
+        >
           <span className={styles.scrollText}>{t.hero.scrollHint}</span>
           <span className={styles.scrollDot} aria-hidden="true" />
         </a>
@@ -107,4 +123,3 @@ export function Hero({ t, lang }) {
     </section>
   );
 }
-

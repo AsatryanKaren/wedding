@@ -5,7 +5,11 @@ import { Ornament } from "../../components/Ornament/Ornament.jsx";
 
 export function InvitationMessage({ t }) {
   return (
-    <section id="invitation" className={shared.section} aria-label={t.invitation.title}>
+    <section
+      id="invitation"
+      className={shared.section}
+      aria-label={t.invitation.title}
+    >
       <div className={shared.softGlow} aria-hidden="true" />
 
       <Reveal className={styles.center}>
@@ -27,4 +31,3 @@ export function InvitationMessage({ t }) {
     </section>
   );
 }
-

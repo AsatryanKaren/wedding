@@ -37,11 +37,10 @@ export function Particles({ count = 16, seed = 24 }) {
             opacity: p.o,
             "--s": p.s,
             "--d": `${p.d}ms`,
-            "--t": `${p.t}ms`
+            "--t": `${p.t}ms`,
           }}
         />
       ))}
     </div>
   );
 }
-

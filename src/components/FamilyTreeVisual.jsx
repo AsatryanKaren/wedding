@@ -30,7 +30,14 @@ export function FamilyTreeVisual() {
         </defs>
 
         {/* Ground wash */}
-        <ellipse cx="210" cy="518" rx="168" ry="22" fill="#061b0e" fillOpacity="0.055" />
+        <ellipse
+          cx="210"
+          cy="518"
+          rx="168"
+          ry="22"
+          fill="#061b0e"
+          fillOpacity="0.055"
+        />
 
         <g>
           <g className={styles.roots}>
@@ -75,8 +82,24 @@ export function FamilyTreeVisual() {
           />
 
           <g className={styles.rings}>
-            <ellipse cx="210" cy="378" rx="24" ry="11" stroke="currentColor" strokeOpacity="0.28" strokeWidth="1.3" />
-            <ellipse cx="210" cy="390" rx="28" ry="13" stroke="#735c00" strokeOpacity="0.55" strokeWidth="1.15" />
+            <ellipse
+              cx="210"
+              cy="378"
+              rx="24"
+              ry="11"
+              stroke="currentColor"
+              strokeOpacity="0.28"
+              strokeWidth="1.3"
+            />
+            <ellipse
+              cx="210"
+              cy="390"
+              rx="28"
+              ry="13"
+              stroke="#735c00"
+              strokeOpacity="0.55"
+              strokeWidth="1.15"
+            />
           </g>
 
           <path
@@ -111,17 +134,53 @@ export function FamilyTreeVisual() {
           />
 
           <g className={styles.leaves}>
-            <circle cx="108" cy="124" r="3.5" fill="#735c00" fillOpacity="0.5" />
+            <circle
+              cx="108"
+              cy="124"
+              r="3.5"
+              fill="#735c00"
+              fillOpacity="0.5"
+            />
             <circle cx="152" cy="82" r="3" fill="#4d6453" fillOpacity="0.45" />
             <circle cx="198" cy="58" r="3.2" fill="#5a7260" fillOpacity="0.5" />
             <circle cx="210" cy="88" r="4" fill="#735c00" fillOpacity="0.48" />
-            <circle cx="268" cy="64" r="3.4" fill="#735c00" fillOpacity="0.46" />
+            <circle
+              cx="268"
+              cy="64"
+              r="3.4"
+              fill="#735c00"
+              fillOpacity="0.46"
+            />
             <circle cx="312" cy="98" r="3" fill="#4d6453" fillOpacity="0.42" />
-            <circle cx="328" cy="152" r="2.8" fill="#735c00" fillOpacity="0.44" />
+            <circle
+              cx="328"
+              cy="152"
+              r="2.8"
+              fill="#735c00"
+              fillOpacity="0.44"
+            />
             <circle cx="88" cy="178" r="2.6" fill="#4d6453" fillOpacity="0.4" />
-            <circle cx="132" cy="148" r="2.4" fill="#735c00" fillOpacity="0.38" />
-            <circle cx="288" cy="132" r="2.5" fill="#5a7260" fillOpacity="0.4" />
-            <circle cx="248" cy="108" r="2.2" fill="#735c00" fillOpacity="0.42" />
+            <circle
+              cx="132"
+              cy="148"
+              r="2.4"
+              fill="#735c00"
+              fillOpacity="0.38"
+            />
+            <circle
+              cx="288"
+              cy="132"
+              r="2.5"
+              fill="#5a7260"
+              fillOpacity="0.4"
+            />
+            <circle
+              cx="248"
+              cy="108"
+              r="2.2"
+              fill="#735c00"
+              fillOpacity="0.42"
+            />
           </g>
 
           <path

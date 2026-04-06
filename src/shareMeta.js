@@ -21,6 +21,15 @@ const SHARE_BY_LANG = {
     siteName: "Կարեն և Աննա",
     jsonLdName: "Կարեն և Աննա, հարսանիք",
   },
+  ru: {
+    title: "Карен и Анна · Свадьба, 24 июня 2026",
+    description:
+      "Приглашаем в Ереван: церемония венчания в церкви Святой Анны, торжество в Art Village Armenia.",
+    ogLocale: "ru_RU",
+    imageAlt: "Свадебное приглашение, Карен и Анна",
+    siteName: "Карен и Анна",
+    jsonLdName: "Карен и Анна, Свадьба",
+  },
 };
 
 function ensureMeta(attrName, attrValue) {
@@ -41,12 +50,15 @@ function setMeta(attrName, attrValue, content) {
 export function applyShareMeta(lang = "en") {
   if (typeof window === "undefined") return;
 
-  const locale = lang === "en" ? "en" : "hy";
+  const locale = lang === "hy" ? "hy" : lang === "ru" ? "ru" : "en";
   const share = SHARE_BY_LANG[locale];
 
   const base = import.meta.env.BASE_URL || "/";
   const origin = window.location.origin;
-  const imageUrl = new URL(SHARE_IMAGE_PATH, origin + (base.endsWith("/") ? base : `${base}/`)).href;
+  const imageUrl = new URL(
+    SHARE_IMAGE_PATH,
+    origin + (base.endsWith("/") ? base : `${base}/`),
+  ).href;
   const pageUrl = `${origin}${window.location.pathname}${window.location.search}`;
 
   document.title = share.title;

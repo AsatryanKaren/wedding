@@ -21,4 +21,3 @@ export function useReducedMotion() {
 
   return reduced;
 }
-

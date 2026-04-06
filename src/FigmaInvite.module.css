@@ -303,7 +303,9 @@
   color: var(--nav-muted);
   padding-bottom: 6px;
   border-bottom: 2px solid transparent;
-  transition: color 0.2s ease, border-color 0.2s ease;
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease;
 }
 
 .navLinks a:hover,
@@ -734,9 +736,21 @@
 /* Opened letter: no landscape photo, paper field + inner card */
 .heroLetterOpened {
   background:
-    radial-gradient(ellipse 92% 62% at 50% 0%, rgba(208, 233, 212, 0.65) 0%, transparent 56%),
-    radial-gradient(ellipse 72% 52% at 0% 100%, rgba(77, 100, 83, 0.14) 0%, transparent 54%),
-    radial-gradient(ellipse 58% 48% at 100% 40%, rgba(6, 27, 14, 0.06) 0%, transparent 50%),
+    radial-gradient(
+      ellipse 92% 62% at 50% 0%,
+      rgba(208, 233, 212, 0.65) 0%,
+      transparent 56%
+    ),
+    radial-gradient(
+      ellipse 72% 52% at 0% 100%,
+      rgba(77, 100, 83, 0.14) 0%,
+      transparent 54%
+    ),
+    radial-gradient(
+      ellipse 58% 48% at 100% 40%,
+      rgba(6, 27, 14, 0.06) 0%,
+      transparent 50%
+    ),
     linear-gradient(178deg, #eef4ef 0%, #d8e6dc 38%, #c5d6ca 72%, #b6c9bc 100%);
 }
 
@@ -782,7 +796,12 @@
 }
 
 .heroLetterOpened .heroRule {
-  background: linear-gradient(90deg, transparent, rgba(77, 100, 83, 0.45), transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(77, 100, 83, 0.45),
+    transparent
+  );
 }
 
 .heroLetterOpened .countNum {
@@ -827,7 +846,9 @@
   color: #fff;
   margin: 0 0 24px;
   font-weight: 400;
-  text-shadow: 0 4px 3px rgba(0, 0, 0, 0.1), 0 10px 8px rgba(0, 0, 0, 0.04);
+  text-shadow:
+    0 4px 3px rgba(0, 0, 0, 0.1),
+    0 10px 8px rgba(0, 0, 0, 0.04);
 }
 
 .heroDate {
@@ -864,7 +885,9 @@
   line-height: 36px;
   margin: 0;
   font-variant-numeric: tabular-nums;
-  transition: transform 0.35s ease, color 0.25s ease;
+  transition:
+    transform 0.35s ease,
+    color 0.25s ease;
 }
 
 .page[data-motion="full"] .countItem .countNum {
@@ -916,7 +939,9 @@
   width: 12px;
   height: 8px;
   opacity: 0.85;
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
 }
 
 .heroChevron:hover,
@@ -1223,7 +1248,9 @@
 
 .eventCard:hover {
   transform: translateY(-3px);
-  box-shadow: 0 16px 36px rgba(6, 27, 14, 0.08), 0 6px 12px rgba(6, 27, 14, 0.05);
+  box-shadow:
+    0 16px 36px rgba(6, 27, 14, 0.08),
+    0 6px 12px rgba(6, 27, 14, 0.05);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1366,7 +1393,9 @@
   display: block;
   opacity: 0.85;
   transform: scale3d(1, 1, 1);
-  transition: transform 0.65s ease, opacity 0.35s ease;
+  transition:
+    transform 0.65s ease,
+    opacity 0.35s ease;
 }
 
 .eventMapReception img {
@@ -1404,11 +1433,25 @@
 .attireBand {
   position: relative;
   background:
-    radial-gradient(ellipse 80% 120% at 0% 0%, rgba(196, 165, 116, 0.18) 0%, transparent 55%),
-    radial-gradient(ellipse 60% 80% at 100% 100%, rgba(208, 233, 212, 0.12) 0%, transparent 50%),
-    linear-gradient(165deg, var(--forest-deep) 0%, var(--forest) 48%, #0a2416 100%);
+    radial-gradient(
+      ellipse 80% 120% at 0% 0%,
+      rgba(196, 165, 116, 0.18) 0%,
+      transparent 55%
+    ),
+    radial-gradient(
+      ellipse 60% 80% at 100% 100%,
+      rgba(208, 233, 212, 0.12) 0%,
+      transparent 50%
+    ),
+    linear-gradient(
+      165deg,
+      var(--forest-deep) 0%,
+      var(--forest) 48%,
+      #0a2416 100%
+    );
   color: var(--cream);
-  padding: clamp(48px, 10vw, 96px) clamp(20px, 5vw, 48px) clamp(56px, 11vw, 104px);
+  padding: clamp(48px, 10vw, 96px) clamp(20px, 5vw, 48px)
+    clamp(56px, 11vw, 104px);
 }
 
 .attireBand::after {
@@ -1418,7 +1461,11 @@
   bottom: 0;
   width: min(180px, 42vw);
   height: 3px;
-  background: linear-gradient(90deg, rgba(196, 165, 116, 0.95), rgba(196, 165, 116, 0.15));
+  background: linear-gradient(
+    90deg,
+    rgba(196, 165, 116, 0.95),
+    rgba(196, 165, 116, 0.15)
+  );
   border-radius: 2px;
 }
 
@@ -1455,7 +1502,8 @@
 }
 
 .attireBody {
-  padding: clamp(40px, 7vw, 80px) clamp(16px, 4.5vw, 48px) clamp(48px, 8vw, 96px);
+  padding: clamp(40px, 7vw, 80px) clamp(16px, 4.5vw, 48px)
+    clamp(48px, 8vw, 96px);
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -1559,7 +1607,12 @@
 }
 
 .attirePaletteCard {
-  background: linear-gradient(145deg, var(--cream-muted) 0%, #fafcfb 38%, #fff 100%);
+  background: linear-gradient(
+    145deg,
+    var(--cream-muted) 0%,
+    #fafcfb 38%,
+    #fff 100%
+  );
   border-radius: 4px;
   padding: clamp(28px, 4vw, 40px);
   box-shadow:
@@ -1715,7 +1768,9 @@
   box-shadow:
     inset 0 0 0 1px rgba(0, 0, 0, 0.07),
     0 10px 28px rgba(6, 27, 14, 0.14);
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
 }
 
 .attireSwatchItem:hover .attireSwatch {
@@ -1758,9 +1813,22 @@
 /* Wedding day schedule: wide zigzag + flowing vine (not a centered rail) */
 .schedule {
   background:
-    radial-gradient(ellipse 72% 48% at 0% 18%, rgba(208, 233, 212, 0.28) 0%, transparent 58%),
-    radial-gradient(ellipse 55% 42% at 100% 72%, rgba(115, 92, 0, 0.07) 0%, transparent 52%),
-    linear-gradient(180deg, var(--cream-muted) 0%, var(--cream) 38%, var(--cream) 100%);
+    radial-gradient(
+      ellipse 72% 48% at 0% 18%,
+      rgba(208, 233, 212, 0.28) 0%,
+      transparent 58%
+    ),
+    radial-gradient(
+      ellipse 55% 42% at 100% 72%,
+      rgba(115, 92, 0, 0.07) 0%,
+      transparent 52%
+    ),
+    linear-gradient(
+      180deg,
+      var(--cream-muted) 0%,
+      var(--cream) 38%,
+      var(--cream) 100%
+    );
   padding: clamp(56px, 9vw, 112px) 0 clamp(48px, 8vw, 96px);
   border-top: 1px solid var(--border-timeline);
   overflow: hidden;
@@ -1938,7 +2006,11 @@
   justify-content: center;
   text-align: center;
   padding: 10px 0;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.94) 0%, rgba(237, 243, 238, 0.98) 100%);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.94) 0%,
+    rgba(237, 243, 238, 0.98) 100%
+  );
   border: 1px solid rgba(115, 92, 0, 0.2);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8);
 }
@@ -2076,7 +2148,12 @@
 
 /* Roots: two families, one new life (tree visual) */
 .roots {
-  background: linear-gradient(180deg, var(--cream-muted) 0%, var(--cream) 45%, var(--cream-muted) 100%);
+  background: linear-gradient(
+    180deg,
+    var(--cream-muted) 0%,
+    var(--cream) 45%,
+    var(--cream-muted) 100%
+  );
   padding: clamp(56px, 9vw, 108px) clamp(20px, 4vw, 56px);
   border-top: 1px solid var(--border-timeline);
   overflow: hidden;

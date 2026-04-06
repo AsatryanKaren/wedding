@@ -2,13 +2,18 @@ import shared from "../sectionShared.module.css";
 import styles from "./CeremonyDetails.module.css";
 import { Reveal } from "../../components/Reveal/Reveal.jsx";
 import { Ornament } from "../../components/Ornament/Ornament.jsx";
-import { IconCalendar, IconClock, IconChurch, IconPin } from "../../components/Icons/Icons.jsx";
+import {
+  IconCalendar,
+  IconClock,
+  IconChurch,
+  IconPin,
+} from "../../components/Icons/Icons.jsx";
 
 const iconFor = {
   date: IconCalendar,
   time: IconClock,
   church: IconChurch,
-  location: IconPin
+  location: IconPin,
 };
 
 export function CeremonyDetails({ t }) {
@@ -48,4 +53,3 @@ export function CeremonyDetails({ t }) {
     </section>
   );
 }
-

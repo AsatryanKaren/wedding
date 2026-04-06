@@ -2,7 +2,11 @@ import styles from "./Ornament.module.css";
 
 export function Ornament({ label }) {
   return (
-    <div className={styles.wrap} aria-hidden={label ? "false" : "true"} aria-label={label}>
+    <div
+      className={styles.wrap}
+      aria-hidden={label ? "false" : "true"}
+      aria-label={label}
+    >
       <span className={styles.line} />
       <span className={styles.dot} />
       <svg
@@ -36,4 +40,3 @@ export function Ornament({ label }) {
     </div>
   );
 }
-

@@ -1,4 +1,4 @@
-.reveal{
+.reveal {
   opacity: 0;
   transform: translate3d(0, 22px, 0) scale(0.985);
   filter: blur(8px);
@@ -9,13 +9,13 @@
   will-change: transform, opacity, filter;
 }
 
-.in{
+.in {
   opacity: 1;
   transform: translate3d(0, 0, 0) scale(1);
   filter: blur(0);
 }
 
-:global([data-reduced-motion="1"]) .reveal{
+:global([data-reduced-motion="1"]) .reveal {
   transition: none;
   opacity: 1;
   transform: none;

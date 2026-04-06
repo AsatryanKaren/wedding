@@ -22,7 +22,14 @@ const NAV_IDS = [
   { id: "roots", key: "roots" },
 ];
 
-function Reveal({ as: Tag = "div", children, className = "", delayMs = 0, reducedMotion, ...rest }) {
+function Reveal({
+  as: Tag = "div",
+  children,
+  className = "",
+  delayMs = 0,
+  reducedMotion,
+  ...rest
+}) {
   const [ref, visible] = useInViewOnce({ disabled: reducedMotion });
   return (
     <Tag
@@ -48,7 +55,9 @@ export default function FigmaInvite() {
 
   return (
     <div className={styles.page} data-motion={motion}>
-      <header className={`${styles.topNav} ${navScrolled ? styles.topNavScrolled : ""}`.trim()}>
+      <header
+        className={`${styles.topNav} ${navScrolled ? styles.topNavScrolled : ""}`.trim()}
+      >
         <div className={styles.topNavBrand}>
           <p className={styles.logo}>
             <span className={styles.logoName}>{f.logo.karen}</span>
@@ -109,11 +118,17 @@ export default function FigmaInvite() {
               <p className={styles.heroDate}>{f.hero.dateLine}</p>
               <hr className={styles.heroRule} />
               {countdown.passed ? (
-                <p className={`${styles.heroDate} ${styles.heroAfterRule}`} style={{ fontSize: "1.125rem" }}>
+                <p
+                  className={`${styles.heroDate} ${styles.heroAfterRule}`}
+                  style={{ fontSize: "1.125rem" }}
+                >
                   {f.hero.thankYouPassed}
                 </p>
               ) : (
-                <div className={`${styles.countdown} ${styles.heroAfterRule}`} aria-live="polite">
+                <div
+                  className={`${styles.countdown} ${styles.heroAfterRule}`}
+                  aria-live="polite"
+                >
                   <div className={styles.countItem}>
                     <p className={styles.countNum}>{countdown.days}</p>
                     <p className={styles.countLabel}>{f.hero.days}</p>
@@ -131,7 +146,11 @@ export default function FigmaInvite() {
             </div>
           </div>
         </div>
-        <a href="#story" className={styles.heroChevron} aria-label={f.hero.chevronAria}>
+        <a
+          href="#story"
+          className={styles.heroChevron}
+          aria-label={f.hero.chevronAria}
+        >
           <img src={figmaAssets.chevronDown} alt="" width={12} height={7} />
         </a>
       </section>
@@ -163,14 +182,32 @@ export default function FigmaInvite() {
             <div className={styles.storyPhotos}>
               <div className={styles.storyPhotosBlur} aria-hidden />
               <div className={styles.photoGrid}>
-                <div className={`${styles.photoCard} ${styles.photoCardHero}`.trim()}>
-                  <img src={figmaAssets.storyPhotoPortrait} alt={f.story.altPortrait} decoding="async" />
+                <div
+                  className={`${styles.photoCard} ${styles.photoCardHero}`.trim()}
+                >
+                  <img
+                    src={figmaAssets.storyPhotoPortrait}
+                    alt={f.story.altPortrait}
+                    decoding="async"
+                  />
                 </div>
-                <div className={`${styles.photoCard} ${styles.photoCardStack}`.trim()}>
-                  <img src={figmaAssets.storyPhotoRight} alt={f.story.altRome} decoding="async" />
+                <div
+                  className={`${styles.photoCard} ${styles.photoCardStack}`.trim()}
+                >
+                  <img
+                    src={figmaAssets.storyPhotoRight}
+                    alt={f.story.altRome}
+                    decoding="async"
+                  />
                 </div>
-                <div className={`${styles.photoCard} ${styles.photoCardStack}`.trim()}>
-                  <img src={figmaAssets.storyPhotoLeft} alt={f.story.altCity} decoding="async" />
+                <div
+                  className={`${styles.photoCard} ${styles.photoCardStack}`.trim()}
+                >
+                  <img
+                    src={figmaAssets.storyPhotoLeft}
+                    alt={f.story.altCity}
+                    decoding="async"
+                  />
                 </div>
               </div>
             </div>
@@ -191,18 +228,34 @@ export default function FigmaInvite() {
               <article className={styles.eventCard}>
                 <div className={styles.eventCardTop}>
                   <div>
-                    <img src={figmaAssets.iconCeremony} alt="" width={29} height={31} />
+                    <img
+                      src={figmaAssets.iconCeremony}
+                      alt=""
+                      width={29}
+                      height={31}
+                    />
                     <h3>{f.events.ceremonyTitle}</h3>
                   </div>
                   <p className={styles.eventTime}>14:00</p>
                 </div>
-                <p className={styles.eventQuote}>&ldquo;{f.events.ceremonyQuote}&rdquo;</p>
+                <p className={styles.eventQuote}>
+                  &ldquo;{f.events.ceremonyQuote}&rdquo;
+                </p>
                 <div>
                   <div className={styles.eventLocation}>
-                    <img src={figmaAssets.iconPinCeremony} alt="" width={15} height={19} />
+                    <img
+                      src={figmaAssets.iconPinCeremony}
+                      alt=""
+                      width={15}
+                      height={19}
+                    />
                     <div className={styles.eventLocationText}>
-                      <p className={styles.eventVenueName}>{f.events.ceremonyVenue}</p>
-                      <p className={styles.eventAddress}>{f.events.ceremonyAddress}</p>
+                      <p className={styles.eventVenueName}>
+                        {f.events.ceremonyVenue}
+                      </p>
+                      <p className={styles.eventAddress}>
+                        {f.events.ceremonyAddress}
+                      </p>
                       <a
                         className={styles.eventVenueLink}
                         href={venueLinks.saintAnnaGoogleMaps}
@@ -219,7 +272,11 @@ export default function FigmaInvite() {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <img src={figmaAssets.ceremonyMap} alt={f.events.mapAltCeremony} decoding="async" />
+                    <img
+                      src={figmaAssets.ceremonyMap}
+                      alt={f.events.mapAltCeremony}
+                      decoding="async"
+                    />
                     <div className={styles.eventMapTint} aria-hidden />
                   </a>
                 </div>
@@ -234,13 +291,24 @@ export default function FigmaInvite() {
                   </div>
                   <p className={styles.eventTime}>17:00</p>
                 </div>
-                <p className={styles.eventQuote}>&ldquo;{f.events.celebrationQuote}&rdquo;</p>
+                <p className={styles.eventQuote}>
+                  &ldquo;{f.events.celebrationQuote}&rdquo;
+                </p>
                 <div>
                   <div className={styles.eventLocation}>
-                    <img src={figmaAssets.iconPinReception} alt="" width={21} height={19} />
+                    <img
+                      src={figmaAssets.iconPinReception}
+                      alt=""
+                      width={21}
+                      height={19}
+                    />
                     <div className={styles.eventLocationText}>
-                      <p className={styles.eventVenueName}>{f.events.receptionVenue}</p>
-                      <p className={styles.eventAddress}>{f.events.receptionAddress}</p>
+                      <p className={styles.eventVenueName}>
+                        {f.events.receptionVenue}
+                      </p>
+                      <p className={styles.eventAddress}>
+                        {f.events.receptionAddress}
+                      </p>
                       <div className={styles.eventVenueLinkRow}>
                         <a
                           className={styles.eventVenueLink}
@@ -270,7 +338,11 @@ export default function FigmaInvite() {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <img src={figmaAssets.receptionMap} alt={f.events.mapAltReception} decoding="async" />
+                    <img
+                      src={figmaAssets.receptionMap}
+                      alt={f.events.mapAltReception}
+                      decoding="async"
+                    />
                     <div className={styles.eventMapTint} aria-hidden />
                   </a>
                 </div>
@@ -280,7 +352,11 @@ export default function FigmaInvite() {
         </div>
       </section>
 
-      <section id="attire" className={styles.attire} aria-labelledby="attire-heading">
+      <section
+        id="attire"
+        className={styles.attire}
+        aria-labelledby="attire-heading"
+      >
         <div className={styles.attireBand}>
           <div className={styles.attireBandInner}>
             <Reveal reducedMotion={reducedMotion}>
@@ -297,7 +373,9 @@ export default function FigmaInvite() {
           <div className={styles.attireLayout}>
             <Reveal reducedMotion={reducedMotion} delayMs={60}>
               <article className={styles.attireDressCard}>
-                <span className={styles.attireCardKicker}>{f.attire.codeKicker}</span>
+                <span className={styles.attireCardKicker}>
+                  {f.attire.codeKicker}
+                </span>
                 <h3 className={styles.attireCardTitle}>{f.attire.codeTitle}</h3>
                 <p className={styles.attireCardText}>{f.attire.codeP1}</p>
                 <p className={styles.attireCardText}>{f.attire.codeP2}</p>
@@ -314,39 +392,69 @@ export default function FigmaInvite() {
             <Reveal reducedMotion={reducedMotion} delayMs={120}>
               <div className={styles.attirePaletteCard}>
                 <div className={styles.attirePaletteHeader}>
-                  <span className={styles.attireCardKicker}>{f.attire.paletteKicker}</span>
-                  <h3 className={styles.attirePaletteTitle}>{f.attire.paletteTitle}</h3>
-                  <p className={styles.attirePaletteSub}>{f.attire.paletteSub}</p>
+                  <span className={styles.attireCardKicker}>
+                    {f.attire.paletteKicker}
+                  </span>
+                  <h3 className={styles.attirePaletteTitle}>
+                    {f.attire.paletteTitle}
+                  </h3>
+                  <p className={styles.attirePaletteSub}>
+                    {f.attire.paletteSub}
+                  </p>
                 </div>
                 <div className={styles.attirePaletteGroups}>
                   <div className={styles.attirePaletteGroup}>
-                    <h4 className={styles.attirePaletteGroupTitle}>{f.attire.forHer}</h4>
-                    <ul className={styles.attireSwatchRow} aria-label={f.attire.womenAria}>
+                    <h4 className={styles.attirePaletteGroupTitle}>
+                      {f.attire.forHer}
+                    </h4>
+                    <ul
+                      className={styles.attireSwatchRow}
+                      aria-label={f.attire.womenAria}
+                    >
                       {f.attire.paletteWomen.map((c) => (
-                        <li key={`w-${c.hex}-${c.name}`} className={styles.attireSwatchItem}>
+                        <li
+                          key={`w-${c.hex}-${c.name}`}
+                          className={styles.attireSwatchItem}
+                        >
                           <span
                             className={styles.attireSwatch}
                             style={{ "--swatch": c.hex }}
                             aria-hidden
                           />
-                          <span className={styles.attireSwatchName}>{c.name}</span>
-                          <span className={styles.attireSwatchHint}>{c.hint}</span>
+                          <span className={styles.attireSwatchName}>
+                            {c.name}
+                          </span>
+                          <span className={styles.attireSwatchHint}>
+                            {c.hint}
+                          </span>
                         </li>
                       ))}
                     </ul>
                   </div>
                   <div className={styles.attirePaletteGroup}>
-                    <h4 className={styles.attirePaletteGroupTitle}>{f.attire.forHim}</h4>
-                    <ul className={styles.attireSwatchRow} aria-label={f.attire.menAria}>
+                    <h4 className={styles.attirePaletteGroupTitle}>
+                      {f.attire.forHim}
+                    </h4>
+                    <ul
+                      className={styles.attireSwatchRow}
+                      aria-label={f.attire.menAria}
+                    >
                       {f.attire.paletteMen.map((c) => (
-                        <li key={`m-${c.hex}-${c.name}`} className={styles.attireSwatchItem}>
+                        <li
+                          key={`m-${c.hex}-${c.name}`}
+                          className={styles.attireSwatchItem}
+                        >
                           <span
                             className={styles.attireSwatch}
                             style={{ "--swatch": c.hex }}
                             aria-hidden
                           />
-                          <span className={styles.attireSwatchName}>{c.name}</span>
-                          <span className={styles.attireSwatchHint}>{c.hint}</span>
+                          <span className={styles.attireSwatchName}>
+                            {c.name}
+                          </span>
+                          <span className={styles.attireSwatchHint}>
+                            {c.hint}
+                          </span>
                         </li>
                       ))}
                     </ul>
@@ -357,11 +465,18 @@ export default function FigmaInvite() {
           </div>
 
           <Reveal reducedMotion={reducedMotion} delayMs={90}>
-            <aside className={styles.attireWhiteTeaseWrap} aria-label={f.attire.whiteTeaseAria}>
+            <aside
+              className={styles.attireWhiteTeaseWrap}
+              aria-label={f.attire.whiteTeaseAria}
+            >
               <div className={styles.attireWhiteTeaseCard}>
                 <div className={styles.attireTeaseQuestionsRow}>
-                  <span className={styles.attireWhiteTeaseLabel}>{f.attire.whiteTeaseLabel}</span>
-                  <p className={styles.attireFootnoteInline}>{f.attire.whiteTeaseInline}</p>
+                  <span className={styles.attireWhiteTeaseLabel}>
+                    {f.attire.whiteTeaseLabel}
+                  </span>
+                  <p className={styles.attireFootnoteInline}>
+                    {f.attire.whiteTeaseInline}
+                  </p>
                 </div>
                 <p className={styles.attireWhiteTease}>
                   {f.attire.whiteTeaseBefore}
@@ -374,7 +489,11 @@ export default function FigmaInvite() {
         </div>
       </section>
 
-      <section id="schedule" className={styles.schedule} aria-labelledby="schedule-heading">
+      <section
+        id="schedule"
+        className={styles.schedule}
+        aria-labelledby="schedule-heading"
+      >
         <div className={styles.scheduleInner}>
           <Reveal reducedMotion={reducedMotion}>
             <header className={styles.scheduleHeader}>
@@ -390,7 +509,10 @@ export default function FigmaInvite() {
               <ScheduleVine className={styles.scheduleVine} />
               <ol className={styles.scheduleList}>
                 {f.schedule.rows.map((row, i) => {
-                  const side = i % 2 === 0 ? styles.scheduleItemStart : styles.scheduleItemEnd;
+                  const side =
+                    i % 2 === 0
+                      ? styles.scheduleItemStart
+                      : styles.scheduleItemEnd;
                   return (
                     <Reveal
                       key={row.datetime + row.title}
@@ -400,11 +522,18 @@ export default function FigmaInvite() {
                       delayMs={i * 36}
                     >
                       <div className={styles.scheduleRow}>
-                        <time className={styles.scheduleTime} dateTime={row.datetime}>
-                          <span className={styles.scheduleTimeInner}>{row.time}</span>
+                        <time
+                          className={styles.scheduleTime}
+                          dateTime={row.datetime}
+                        >
+                          <span className={styles.scheduleTimeInner}>
+                            {row.time}
+                          </span>
                         </time>
                         <div className={styles.scheduleCard}>
-                          <h3 className={styles.scheduleCardTitle}>{row.title}</h3>
+                          <h3 className={styles.scheduleCardTitle}>
+                            {row.title}
+                          </h3>
                           <p className={styles.schedulePlace}>{row.place}</p>
                           <p className={styles.scheduleDetail}>{row.detail}</p>
                           <span className={styles.scheduleTag}>{row.tag}</span>
@@ -419,7 +548,11 @@ export default function FigmaInvite() {
         </div>
       </section>
 
-      <section id="roots" className={styles.roots} aria-labelledby="roots-heading">
+      <section
+        id="roots"
+        className={styles.roots}
+        aria-labelledby="roots-heading"
+      >
         <div className={styles.rootsInner}>
           <div className={styles.rootsGrid}>
             <Reveal reducedMotion={reducedMotion} delayMs={80}>
