@@ -9,6 +9,7 @@ import { IconCelebration } from "./components/Icons/Icons.jsx";
 import { ScheduleVine } from "./components/ScheduleVine.jsx";
 import { LanguageSwitcher } from "./components/LanguageSwitcher/LanguageSwitcher.jsx";
 import { useI18n } from "./i18n/LanguageContext.jsx";
+import { useInviteMode } from "./hooks/InviteContext.jsx";
 import styles from "./FigmaInvite.module.css";
 
 const WEDDING_AT = new Date("2026-06-24T14:00:00");
@@ -45,6 +46,7 @@ function Reveal({
 
 export default function FigmaInvite() {
   const { lang, setLang, t } = useI18n();
+  const { hasSpecialAccess } = useInviteMode();
   const f = t.figma;
   const countdown = useWeddingCountdown(WEDDING_AT);
   const reducedMotion = useReducedMotion();
@@ -282,72 +284,74 @@ export default function FigmaInvite() {
                 </div>
               </article>
             </Reveal>
-            <Reveal reducedMotion={reducedMotion} delayMs={120}>
-              <article className={styles.eventCard}>
-                <div className={styles.eventCardTop}>
-                  <div>
-                    <IconCelebration className={styles.eventCelebrationIcon} />
-                    <h3>{f.events.celebrationTitle}</h3>
+            {hasSpecialAccess && (
+              <Reveal reducedMotion={reducedMotion} delayMs={120}>
+                <article className={styles.eventCard}>
+                  <div className={styles.eventCardTop}>
+                    <div>
+                      <IconCelebration className={styles.eventCelebrationIcon} />
+                      <h3>{f.events.celebrationTitle}</h3>
+                    </div>
+                    <p className={styles.eventTime}>17:00</p>
                   </div>
-                  <p className={styles.eventTime}>17:00</p>
-                </div>
-                <p className={styles.eventQuote}>
-                  &ldquo;{f.events.celebrationQuote}&rdquo;
-                </p>
-                <div>
-                  <div className={styles.eventLocation}>
-                    <img
-                      src={figmaAssets.iconPinReception}
-                      alt=""
-                      width={21}
-                      height={19}
-                    />
-                    <div className={styles.eventLocationText}>
-                      <p className={styles.eventVenueName}>
-                        {f.events.receptionVenue}
-                      </p>
-                      <p className={styles.eventAddress}>
-                        {f.events.receptionAddress}
-                      </p>
-                      <div className={styles.eventVenueLinkRow}>
-                        <a
-                          className={styles.eventVenueLink}
-                          href={venueLinks.artVillageSite}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          artvillage.am
-                        </a>
-                        <span className={styles.eventVenueLinkSep} aria-hidden>
-                          ·
-                        </span>
-                        <a
-                          className={styles.eventVenueLink}
-                          href={venueLinks.artVillageGoogleMaps}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          {f.events.openMaps}
-                        </a>
+                  <p className={styles.eventQuote}>
+                    &ldquo;{f.events.celebrationQuote}&rdquo;
+                  </p>
+                  <div>
+                    <div className={styles.eventLocation}>
+                      <img
+                        src={figmaAssets.iconPinReception}
+                        alt=""
+                        width={21}
+                        height={19}
+                      />
+                      <div className={styles.eventLocationText}>
+                        <p className={styles.eventVenueName}>
+                          {f.events.receptionVenue}
+                        </p>
+                        <p className={styles.eventAddress}>
+                          {f.events.receptionAddress}
+                        </p>
+                        <div className={styles.eventVenueLinkRow}>
+                          <a
+                            className={styles.eventVenueLink}
+                            href={venueLinks.artVillageSite}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            artvillage.am
+                          </a>
+                          <span className={styles.eventVenueLinkSep} aria-hidden>
+                            ·
+                          </span>
+                          <a
+                            className={styles.eventVenueLink}
+                            href={venueLinks.artVillageGoogleMaps}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            {f.events.openMaps}
+                          </a>
+                        </div>
                       </div>
                     </div>
+                    <a
+                      className={`${styles.eventMap} ${styles.eventMapReception}`.trim()}
+                      href={venueLinks.artVillageSite}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <img
+                        src={figmaAssets.receptionMap}
+                        alt={f.events.mapAltReception}
+                        decoding="async"
+                      />
+                      <div className={styles.eventMapTint} aria-hidden />
+                    </a>
                   </div>
-                  <a
-                    className={`${styles.eventMap} ${styles.eventMapReception}`.trim()}
-                    href={venueLinks.artVillageSite}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <img
-                      src={figmaAssets.receptionMap}
-                      alt={f.events.mapAltReception}
-                      decoding="async"
-                    />
-                    <div className={styles.eventMapTint} aria-hidden />
-                  </a>
-                </div>
-              </article>
-            </Reveal>
+                </article>
+              </Reveal>
+            )}
           </div>
         </div>
       </section>
