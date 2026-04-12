@@ -154,3 +154,25 @@ export function IconPin(props) {
     </svg>
   );
 }
+
+/** Hero scroll hint; replaces fragile Figma MCP asset URLs */
+export function IconChevronDown(props) {
+  return (
+    <svg
+      viewBox="0 0 12 7"
+      width="12"
+      height="7"
+      fill="none"
+      aria-hidden="true"
+      {...props}
+    >
+      <path
+        d="M1 1.5 5.5 4 10 1.5"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}

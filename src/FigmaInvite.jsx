@@ -5,7 +5,12 @@ import { useActiveNavSection } from "./hooks/useActiveNavSection.js";
 import { useScrollPast } from "./hooks/useScrollPast.js";
 import { useWeddingCountdown } from "./hooks/useWeddingCountdown.js";
 import { FamilyTreeVisual } from "./components/FamilyTreeVisual.jsx";
-import { IconCelebration } from "./components/Icons/Icons.jsx";
+import {
+  IconCelebration,
+  IconChevronDown,
+  IconChurch,
+  IconPin,
+} from "./components/Icons/Icons.jsx";
 import { ScheduleVine } from "./components/ScheduleVine.jsx";
 import { LanguageSwitcher } from "./components/LanguageSwitcher/LanguageSwitcher.jsx";
 import { useI18n } from "./i18n/LanguageContext.jsx";
@@ -104,11 +109,11 @@ export default function FigmaInvite() {
               <span className={styles.heroInviteCardFrame}>
                 <img
                   src={figmaAssets.heroInvitationCover}
-                  alt=""
+                  alt={f.hero.coverAlt}
                   className={styles.heroInviteCardImg}
                   decoding="async"
-                  width={1400}
-                  height={933}
+                  width={1024}
+                  height={1536}
                 />
               </span>
             </div>
@@ -153,7 +158,7 @@ export default function FigmaInvite() {
           className={styles.heroChevron}
           aria-label={f.hero.chevronAria}
         >
-          <img src={figmaAssets.chevronDown} alt="" width={12} height={7} />
+          <IconChevronDown />
         </a>
       </section>
 
@@ -164,20 +169,6 @@ export default function FigmaInvite() {
               <p className={styles.storyEyebrow}>{f.story.eyebrow}</p>
               <h2 className={styles.storyHeading}>{f.story.heading}</h2>
               <p className={styles.storyLead}>{f.story.lead}</p>
-              <div className={styles.timeline}>
-                <article className={styles.timelineItem}>
-                  <span className={styles.timelineDot} aria-hidden />
-                  <h3>{f.story.t1Title}</h3>
-                  <p className={styles.timelineMeta}>{f.story.t1Meta}</p>
-                  <p className={styles.timelineBody}>{f.story.t1Body}</p>
-                </article>
-                <article className={styles.timelineItem}>
-                  <span className={styles.timelineDot} aria-hidden />
-                  <h3>{f.story.t2Title}</h3>
-                  <p className={styles.timelineMeta}>{f.story.t2Meta}</p>
-                  <p className={styles.timelineBody}>{f.story.t2Body}</p>
-                </article>
-              </div>
             </div>
           </Reveal>
           <Reveal reducedMotion={reducedMotion} delayMs={140}>
@@ -191,24 +182,8 @@ export default function FigmaInvite() {
                     src={figmaAssets.storyPhotoPortrait}
                     alt={f.story.altPortrait}
                     decoding="async"
-                  />
-                </div>
-                <div
-                  className={`${styles.photoCard} ${styles.photoCardStack}`.trim()}
-                >
-                  <img
-                    src={figmaAssets.storyPhotoRight}
-                    alt={f.story.altRome}
-                    decoding="async"
-                  />
-                </div>
-                <div
-                  className={`${styles.photoCard} ${styles.photoCardStack}`.trim()}
-                >
-                  <img
-                    src={figmaAssets.storyPhotoLeft}
-                    alt={f.story.altCity}
-                    decoding="async"
+                    width={4032}
+                    height={3024}
                   />
                 </div>
               </div>
@@ -230,12 +205,7 @@ export default function FigmaInvite() {
               <article className={styles.eventCard}>
                 <div className={styles.eventCardTop}>
                   <div>
-                    <img
-                      src={figmaAssets.iconCeremony}
-                      alt=""
-                      width={29}
-                      height={31}
-                    />
+                    <IconChurch className={styles.eventCelebrationIcon} />
                     <h3>{f.events.ceremonyTitle}</h3>
                   </div>
                   <p className={styles.eventTime}>14:00</p>
@@ -245,12 +215,7 @@ export default function FigmaInvite() {
                 </p>
                 <div>
                   <div className={styles.eventLocation}>
-                    <img
-                      src={figmaAssets.iconPinCeremony}
-                      alt=""
-                      width={15}
-                      height={19}
-                    />
+                    <IconPin className={styles.eventPinIcon} />
                     <div className={styles.eventLocationText}>
                       <p className={styles.eventVenueName}>
                         {f.events.ceremonyVenue}
@@ -292,19 +257,14 @@ export default function FigmaInvite() {
                       <IconCelebration className={styles.eventCelebrationIcon} />
                       <h3>{f.events.celebrationTitle}</h3>
                     </div>
-                    <p className={styles.eventTime}>17:00</p>
+                    <p className={styles.eventTime}>18:00</p>
                   </div>
                   <p className={styles.eventQuote}>
                     &ldquo;{f.events.celebrationQuote}&rdquo;
                   </p>
                   <div>
                     <div className={styles.eventLocation}>
-                      <img
-                        src={figmaAssets.iconPinReception}
-                        alt=""
-                        width={21}
-                        height={19}
-                      />
+                      <IconPin className={styles.eventPinIcon} />
                       <div className={styles.eventLocationText}>
                         <p className={styles.eventVenueName}>
                           {f.events.receptionVenue}
@@ -368,7 +328,26 @@ export default function FigmaInvite() {
               <h2 id="attire-heading" className={styles.attireBandTitle}>
                 {f.attire.title}
               </h2>
-              <p className={styles.attireBandLead}>{f.attire.lead}</p>
+              {f.attire.leadWomenMark?.trim() || f.attire.leadMenMark?.trim() ? (
+                <div className={styles.attireBandLead}>
+                  {f.attire.leadWomenMark?.trim() ? (
+                    <p className={styles.attireBandLeadLine}>
+                      <span className={styles.attireBandLeadMark}>
+                        {f.attire.leadWomenMark}
+                      </span>
+                      {f.attire.leadWomenText ?? ""}
+                    </p>
+                  ) : null}
+                  {f.attire.leadMenMark?.trim() ? (
+                    <p className={styles.attireBandLeadLine}>
+                      <span className={styles.attireBandLeadMark}>
+                        {f.attire.leadMenMark}
+                      </span>
+                      {f.attire.leadMenText ?? ""}
+                    </p>
+                  ) : null}
+                </div>
+              ) : null}
             </Reveal>
           </div>
         </div>
@@ -376,24 +355,6 @@ export default function FigmaInvite() {
         <div className={styles.attireBody}>
           <div className={styles.attireLayout}>
             <Reveal reducedMotion={reducedMotion} delayMs={60}>
-              <article className={styles.attireDressCard}>
-                <span className={styles.attireCardKicker}>
-                  {f.attire.codeKicker}
-                </span>
-                <h3 className={styles.attireCardTitle}>{f.attire.codeTitle}</h3>
-                <p className={styles.attireCardText}>{f.attire.codeP1}</p>
-                <p className={styles.attireCardText}>{f.attire.codeP2}</p>
-                <ul className={styles.attireMiniList}>
-                  <li>{f.attire.bullet1}</li>
-                  <li>{f.attire.bullet2}</li>
-                  <li>{f.attire.bullet3}</li>
-                  <li>{f.attire.bullet4}</li>
-                  <li>{f.attire.bullet5}</li>
-                </ul>
-              </article>
-            </Reveal>
-
-            <Reveal reducedMotion={reducedMotion} delayMs={120}>
               <div className={styles.attirePaletteCard}>
                 <div className={styles.attirePaletteHeader}>
                   <span className={styles.attireCardKicker}>
@@ -402,9 +363,6 @@ export default function FigmaInvite() {
                   <h3 className={styles.attirePaletteTitle}>
                     {f.attire.paletteTitle}
                   </h3>
-                  <p className={styles.attirePaletteSub}>
-                    {f.attire.paletteSub}
-                  </p>
                 </div>
                 <div className={styles.attirePaletteGroups}>
                   <div className={styles.attirePaletteGroup}>
@@ -427,9 +385,6 @@ export default function FigmaInvite() {
                           />
                           <span className={styles.attireSwatchName}>
                             {c.name}
-                          </span>
-                          <span className={styles.attireSwatchHint}>
-                            {c.hint}
                           </span>
                         </li>
                       ))}
@@ -456,9 +411,6 @@ export default function FigmaInvite() {
                           <span className={styles.attireSwatchName}>
                             {c.name}
                           </span>
-                          <span className={styles.attireSwatchHint}>
-                            {c.hint}
-                          </span>
                         </li>
                       ))}
                     </ul>
@@ -467,29 +419,6 @@ export default function FigmaInvite() {
               </div>
             </Reveal>
           </div>
-
-          <Reveal reducedMotion={reducedMotion} delayMs={90}>
-            <aside
-              className={styles.attireWhiteTeaseWrap}
-              aria-label={f.attire.whiteTeaseAria}
-            >
-              <div className={styles.attireWhiteTeaseCard}>
-                <div className={styles.attireTeaseQuestionsRow}>
-                  <span className={styles.attireWhiteTeaseLabel}>
-                    {f.attire.whiteTeaseLabel}
-                  </span>
-                  <p className={styles.attireFootnoteInline}>
-                    {f.attire.whiteTeaseInline}
-                  </p>
-                </div>
-                <p className={styles.attireWhiteTease}>
-                  {f.attire.whiteTeaseBefore}
-                  <em>{f.attire.whiteTeaseEm}</em>
-                  {f.attire.whiteTeaseAfter}
-                </p>
-              </div>
-            </aside>
-          </Reveal>
         </div>
       </section>
 

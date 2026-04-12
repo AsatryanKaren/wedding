@@ -4,8 +4,8 @@
 
 const scheduleEn = [
   {
-    time: "14:00",
-    datetime: "2026-06-24T14:00:00",
+    time: "13:45",
+    datetime: "2026-06-24T13:45:00",
     title: "Ceremony",
     place: "Saint Anna Church, Abovyan St, Yerevan",
     detail:
@@ -13,17 +13,8 @@ const scheduleEn = [
     tag: "Vows",
   },
   {
-    time: "15:00",
-    datetime: "2026-06-24T15:00:00",
-    title: "Photo session",
-    place: "Saint Anna Church & grounds",
-    detail:
-      "Portraits with us and the wedding party before everyone heads toward Art Village.",
-    tag: "Photos",
-  },
-  {
-    time: "17:00",
-    datetime: "2026-06-24T17:00:00",
+    time: "17:30",
+    datetime: "2026-06-24T18:00:00",
     title: "Guest arrival at the venue",
     place: "Art Village Armenia, Ashtarak",
     detail:
@@ -31,31 +22,22 @@ const scheduleEn = [
     tag: "Arrival",
   },
   {
-    time: "17:30",
-    datetime: "2026-06-24T17:30:00",
-    title: "Cocktails & lemonade",
-    place: "Art Village, gardens & pavilion",
-    detail:
-      "Signature cocktails, fresh lemonade, and light bites while the space fills with conversation.",
-    tag: "Reception",
-  },
-  {
-    time: "18:00",
-    datetime: "2026-06-24T18:00:00",
+    time: "18:30",
+    datetime: "2026-06-24T18:30:00",
     title: "Dinner is served",
     place: "Art Village, celebration spaces",
     detail:
-      "Plated dinner, toasts from our nearest and dearest, and your chosen entrée.",
+      "Dinner, heartfelt toasts from our nearest and dearest, and a warm evening together.",
     tag: "Feast",
   },
   {
-    time: "19:30",
-    datetime: "2026-06-24T19:30:00",
-    title: "First dance",
-    place: "Art Village Hall",
+    time: "20:00",
+    datetime: "2026-06-24T20:00:00",
+    title: "Sparkling toast",
+    place: "Art Village",
     detail:
-      "We open the dancing together under the lights, then the floor is yours.",
-    tag: "Dance",
+      "A glass of something sparkling with everyone, cheers to you for being here.",
+    tag: "Toast",
   },
   {
     time: "20:30",
@@ -74,15 +56,6 @@ const scheduleEn = [
       "Something sweet before the night carries on, join us for the cutting.",
     tag: "Cake",
   },
-  {
-    time: "22:30",
-    datetime: "2026-06-24T22:30:00",
-    title: "Sparkling toast",
-    place: "Art Village",
-    detail:
-      "A glass of something sparkling with everyone, cheers to you for being here.",
-    tag: "Toast",
-  },
 ];
 
 const scheduleHy = [
@@ -96,17 +69,8 @@ const scheduleHy = [
     tag: "Երդումներ",
   },
   {
-    time: "15:00",
-    datetime: "2026-06-24T15:00:00",
-    title: "Ֆոտոշարք",
-    place: "Սուրբ Աննա եկեղեցի և հարակից տարածք",
-    detail:
-      "Լուսանկարներ մեզ և հարսանեկան խմբի հետ, նախքան բոլորը կուղևորվեն Art Village։",
-    tag: "Լուսանկարներ",
-  },
-  {
-    time: "17:00",
-    datetime: "2026-06-24T17:00:00",
+    time: "17:30",
+    datetime: "2026-06-24T17:30:00",
     title: "Հյուրերի ժամանում",
     place: "Art Village Armenia, Աշտարակ",
     detail:
@@ -114,31 +78,22 @@ const scheduleHy = [
     tag: "Ժամանում",
   },
   {
-    time: "17:30",
-    datetime: "2026-06-24T17:30:00",
-    title: "Կոկտեյլներ և լիմոնադ",
-    place: "Art Village, այգիներ և տաղավար",
-    detail:
-      "Հատուկ կոկտեյլներ, թարմ լիմոնադ և թեթև նախուտեստներ՝ հաճելի զրույցների ուղեկցությամբ։",
-    tag: "Հյուրասիրություն",
-  },
-  {
-    time: "18:00",
-    datetime: "2026-06-24T18:00:00",
+    time: "18:30",
+    datetime: "2026-06-24T18:30:00",
     title: "Ընթրիք",
     place: "Art Village, տոնական սրահներ",
     detail:
-      "Տոնական ընթրիք, կենացներ մեր ամենամտերիմներից և ձեր ընտրած հիմնական ուտեստը։",
+      "Ընթրիք, սրտանց կենացներ մեր ամենամտերիմներից և տաք երեկո բոլորի հետ միասին։",
     tag: "Խնջույք",
   },
   {
-    time: "19:30",
-    datetime: "2026-06-24T19:30:00",
-    title: "Առաջին պար",
-    place: "Art Village սրահ",
+    time: "20:00",
+    datetime: "2026-06-24T20:00:00",
+    title: "Շամպայն և կենաց",
+    place: "Art Village",
     detail:
-      "Մենք միասին կբացենք պարը լույսերի ներքո, որից հետո հարթակը ձերն է։",
-    tag: "Պար",
+      "Մի բաժակ շամպայն բոլորի հետ՝ ի նշան շնորհակալության ձեր ներկայության համար։",
+    tag: "Կենաց",
   },
   {
     time: "20:30",
@@ -158,15 +113,6 @@ const scheduleHy = [
       "Քաղցր ակնթարթ նախքան երեկոյի շարունակությունը. միացեք մեզ տորթի կտրման արարողությանը։",
     tag: "Տորթ",
   },
-  {
-    time: "22:30",
-    datetime: "2026-06-24T22:30:00",
-    title: "Շամպայն և կենաց",
-    place: "Art Village",
-    detail:
-      "Մի բաժակ շամպայն բոլորի հետ՝ ի նշան շնորհակալության ձեր ներկայության համար։",
-    tag: "Կենաց",
-  },
 ];
 
 const scheduleRu = [
@@ -180,17 +126,8 @@ const scheduleRu = [
     tag: "Обеты",
   },
   {
-    time: "15:00",
-    datetime: "2026-06-24T15:00:00",
-    title: "Фотосессия",
-    place: "Церковь Святой Анны и территория вокруг",
-    detail:
-      "Совместные фотографии, прежде чем мы все отправимся в Art Village.",
-    tag: "Фото",
-  },
-  {
-    time: "17:00",
-    datetime: "2026-06-24T17:00:00",
+    time: "17:30",
+    datetime: "2026-06-24T17:30:00",
     title: "Прибытие гостей",
     place: "Art Village Armenia, Аштарак",
     detail:
@@ -198,31 +135,22 @@ const scheduleRu = [
     tag: "Прибытие",
   },
   {
-    time: "17:30",
-    datetime: "2026-06-24T17:30:00",
-    title: "Коктейли и лимонад",
-    place: "Art Village, сады и павильон",
-    detail:
-      "Фирменные коктейли, свежий лимонад и легкие закуски за приятными беседами.",
-    tag: "Фуршет",
-  },
-  {
-    time: "18:00",
-    datetime: "2026-06-24T18:00:00",
+    time: "18:30",
+    datetime: "2026-06-24T18:30:00",
     title: "Ужин",
     place: "Art Village, банкетные залы",
     detail:
-      "Праздничный ужин, тосты от наших самых близких и основное блюдо на ваш выбор.",
+      "Ужин, искренние тосты от наших самых близких и тёплый вечер вместе.",
     tag: "Ужин",
   },
   {
-    time: "19:30",
-    datetime: "2026-06-24T19:30:00",
-    title: "Первый танец",
-    place: "Зал Art Village",
+    time: "20:00",
+    datetime: "2026-06-24T20:00:00",
+    title: "Игристое вино и тост",
+    place: "Art Village",
     detail:
-      "Мы вместе откроем танцпол при свете огней, а затем он будет в вашем распоряжении.",
-    tag: "Танец",
+      "Бокал игристого в кругу гостей — в знак благодарности за то, что вы здесь.",
+    tag: "Тост",
   },
   {
     time: "20:30",
@@ -242,201 +170,60 @@ const scheduleRu = [
       "Сладкое мгновение перед продолжением ночи: присоединяйтесь к нам для разрезания торта.",
     tag: "Торт",
   },
-  {
-    time: "22:30",
-    datetime: "2026-06-24T22:30:00",
-    title: "Игристое вино и тост",
-    place: "Art Village",
-    detail:
-      "Бокал игристого в кругу гостей — в знак благодарности за то, что вы здесь.",
-    tag: "Тост",
-  },
 ];
 
 const paletteWomenEn = [
-  {
-    hex: "#6b7d6e",
-    name: "Sage",
-    hint: "Midi & maxi dresses, soft linen, cool undertones",
-  },
-  {
-    hex: "#e8d9ce",
-    name: "Blush",
-    hint: "Dusty rose, mauve, and barely-there pink",
-  },
-  {
-    hex: "#c4a574",
-    name: "Champagne",
-    hint: "Metallic sheen, gold-beige, warm jewellery",
-  },
-  {
-    hex: "#d4c4a8",
-    name: "Sand",
-    hint: "Oat, stone, and warm cream separates",
-  },
-  { hex: "#8b7d82", name: "Dusty mauve", hint: "Muted plum & taupe florals" },
-  {
-    hex: "#5c6b62",
-    name: "Eucalyptus",
-    hint: "Blue-green silks & light crepe",
-  },
+  { hex: "#7a8c7e", name: "Sage" },
+  { hex: "#b8918d", name: "Blush" },
+  { hex: "#c4a574", name: "Champagne" },
+  { hex: "#b8d4e3", name: "Light blue" },
+  { hex: "#8b7d82", name: "Dusty mauve" },
+  { hex: "#4a6f5c", name: "Eucalyptus" },
 ];
 
 const paletteWomenHy = [
-  {
-    hex: "#6b7d6e",
-    name: "Շալֆեյ (Sage)",
-    hint: "Միդի և մաքսի զգեստներ, փափուկ վուշ, զով երանգներ",
-  },
-  {
-    hex: "#e8d9ce",
-    name: "Վարդագույն",
-    hint: "Մեղմ վարդագույն, մանուշակագույն և գրեթե աննշան վարդագույն",
-  },
-  {
-    hex: "#c4a574",
-    name: "Շամպայն",
-    hint: "Մետաղական փայլ, ոսկեգույն բեժ, տաք զարդեր",
-  },
-  {
-    hex: "#d4c4a8",
-    name: "Ավազագույն",
-    hint: "Վարսակագույն, քարագույն և տաք կրեմագույն կտորներ",
-  },
-  {
-    hex: "#8b7d82",
-    name: "Մուգ մանուշակագույն",
-    hint: "Խամրած սալորագույն և մոխրադարչնագույն ծաղկային նախշեր",
-  },
-  {
-    hex: "#5c6b62",
-    name: "Եվկալիպտ",
-    hint: "Կապտականաչավուն մետաքս և թեթև կրեպ",
-  },
+  { hex: "#7a8c7e", name: "Շալֆեյ (Sage)" },
+  { hex: "#b8918d", name: "Մուգ վարդագույն (Blush)" },
+  { hex: "#c4a574", name: "Շամպայն" },
+  { hex: "#b8d4e3", name: "Թեթև կապույտ" },
+  { hex: "#8b7d82", name: "Մուգ մանուշակագույն" },
+  { hex: "#4a6f5c", name: "Եվկալիպտ" },
 ];
 
 const paletteMenEn = [
-  { hex: "#1b3022", name: "Forest", hint: "Deep green or charcoal wool suits" },
-  {
-    hex: "#3d5244",
-    name: "Moss",
-    hint: "Olive & sage tailoring, textured jackets",
-  },
-  {
-    hex: "#2a3540",
-    name: "Midnight",
-    hint: "Navy suit, crisp white or cream shirt",
-  },
-  {
-    hex: "#1a1a1a",
-    name: "Black",
-    hint: "Classic black suit or dinner jacket, always welcome",
-  },
-  {
-    hex: "#4a4a48",
-    name: "Charcoal",
-    hint: "Grey suit, matte black accessories",
-  },
-  {
-    hex: "#d4c4a8",
-    name: "Sand",
-    hint: "Linen blazer, tan chinos, light knit",
-  },
+  { hex: "#1b3022", name: "Forest" },
+  { hex: "#3d5244", name: "Moss" },
+  { hex: "#2a3540", name: "Midnight" },
+  { hex: "#1a1a1a", name: "Black" },
+  { hex: "#4a4a48", name: "Charcoal" },
+  { hex: "#d4c4a8", name: "Sand" },
 ];
 
 const paletteMenHy = [
-  {
-    hex: "#1b3022",
-    name: "Անտառագույն",
-    hint: "Մուգ կանաչ կամ վառարանագույն բրդյա կոստյումներ",
-  },
-  {
-    hex: "#3d5244",
-    name: "Մամուռ",
-    hint: "Ձիթապտղի և շալֆեյի երանգի կտոր, տեքստուրային բաճկոններ",
-  },
-  {
-    hex: "#2a3540",
-    name: "Կեսգիշեր",
-    hint: "Մուգ կապույտ կոստյում, սպիտակ կամ կրեմագույն վերնաշապիկ",
-  },
-  {
-    hex: "#1a1a1a",
-    name: "Սև",
-    hint: "Դասական սև կոստյում կամ սմոքինգ, միշտ ողջունելի",
-  },
-  {
-    hex: "#4a4a48",
-    name: "Մուգ մոխրագույն",
-    hint: "Մոխրագույն կոստյում, անփայլ սև աքսեսուարներ",
-  },
-  {
-    hex: "#d4c4a8",
-    name: "Ավազագույն",
-    hint: "Վուշե բլեյզեր, բեժ չինոս, թեթև տրիկոտաժ",
-  },
+  { hex: "#1b3022", name: "Անտառագույն" },
+  { hex: "#3d5244", name: "Մամուռ" },
+  { hex: "#2a3540", name: "Կեսգիշեր" },
+  { hex: "#1a1a1a", name: "Սև" },
+  { hex: "#4a4a48", name: "Մուգ մոխրագույն" },
+  { hex: "#d4c4a8", name: "Ավազագույն" },
 ];
 
 const paletteWomenRu = [
-  {
-    hex: "#6b7d6e",
-    name: "Шалфей",
-    hint: "Платья миди и макси, мягкий лен, холодные оттенки",
-  },
-  {
-    hex: "#e8d9ce",
-    name: "Румянец",
-    hint: "Пыльная роза, лиловый и едва заметный розовый",
-  },
-  {
-    hex: "#c4a574",
-    name: "Шампанское",
-    hint: "Металлический блеск, золотисто-бежевый, теплые украшения",
-  },
-  {
-    hex: "#d4c4a8",
-    name: "Песочный",
-    hint: "Овсяный, каменный и теплые кремовые оттенки",
-  },
-  {
-    hex: "#8b7d82",
-    name: "Темно-лиловый",
-    hint: "Приглушенный сливовый и серо-коричневые цветочные принты",
-  },
-  { hex: "#5c6b62", name: "Эвкалипт", hint: "Сине-зеленый шелк и легкий креп" },
+  { hex: "#7a8c7e", name: "Шалфей" },
+  { hex: "#b8918d", name: "Тёмный румянец" },
+  { hex: "#c4a574", name: "Шампанское" },
+  { hex: "#b8d4e3", name: "Светло-голубой" },
+  { hex: "#8b7d82", name: "Темно-лиловый" },
+  { hex: "#4a6f5c", name: "Эвкалипт" },
 ];
 
 const paletteMenRu = [
-  {
-    hex: "#1b3022",
-    name: "Лесной",
-    hint: "Темно-зеленые или угольные шерстяные костюмы",
-  },
-  {
-    hex: "#3d5244",
-    name: "Мох",
-    hint: "Костюмы оливкового цвета и цвета шалфея, текстурные пиджаки",
-  },
-  {
-    hex: "#2a3540",
-    name: "Полночь",
-    hint: "Темно-синий костюм, белая или кремовая рубашка",
-  },
-  {
-    hex: "#1a1a1a",
-    name: "Черный",
-    hint: "Классический черный костюм или смокинг — всегда уместны",
-  },
-  {
-    hex: "#4a4a48",
-    name: "Угольный",
-    hint: "Серый костюм, матовые черные аксессуары",
-  },
-  {
-    hex: "#d4c4a8",
-    name: "Песочный",
-    hint: "Льняной блейзер, бежевые чинос, легкий трикотаж",
-  },
+  { hex: "#1b3022", name: "Лесной" },
+  { hex: "#3d5244", name: "Мох" },
+  { hex: "#2a3540", name: "Полночь" },
+  { hex: "#1a1a1a", name: "Черный" },
+  { hex: "#4a4a48", name: "Угольный" },
+  { hex: "#d4c4a8", name: "Песочный" },
 ];
 
 export const figmaByLang = {
@@ -461,22 +248,15 @@ export const figmaByLang = {
       hours: "Hours",
       mins: "Mins",
       chevronAria: "Scroll to story",
+      coverAlt:
+        "Illustration of an outdoor wedding reception, long table in an orchard with string lights",
     },
     story: {
       eyebrow: "Our Journey",
       heading: "How we found each other, and kept choosing one another.",
-      lead: "Ours began in the most ordinary kind of room, a meeting at the office, and grew from there into something neither of us saw coming, until one birthday changed everything.",
-      t1Title: "The First Hello",
-      t1Meta: "March 28 · The office where we work",
-      t1Body:
-        "It was just another work meeting, until the conversation lingered, and the professional line between us quietly softened into curiosity, then friendship, then something neither agenda nor calendar had planned.",
-      t2Title: "The Proposal",
-      t2Meta: "September 8 · Karen's birthday",
-      t2Body:
-        "Anna chose a day Karen thought was only about cake and candles, her birthday, when she wasn't watching for a ring or a speech. In that unguarded, happy moment, the question landed: not in a grand production, but in the middle of real life, when love felt safest and most surprising all at once.",
+      lead:
+        "It began in the most ordinary way, during a work meeting in the office, where a conversation lingered just a little longer than expected and the professional line quietly softened into curiosity, then friendship, and eventually something neither of us saw coming. What started as routine grew into a connection no agenda or calendar could predict, unfolding naturally until a simple, real-life moment turned everything into a shared future, honest, unexpected, and deeply ours.",
       altPortrait: "Karen and Anna, portrait",
-      altRome: "Karen and Anna in Rome",
-      altCity: "Karen and Anna overlooking the city",
     },
     events: {
       eyebrow: "The Celebration",
@@ -498,9 +278,12 @@ export const figmaByLang = {
     attire: {
       eyebrow: "Dress the part",
       title: "What to wear & which colours feel at home",
-      lead: "Garden formal with a whisper of the woods, think movement, texture, and tones that belong beside stone, grass, and candlelight.",
-      codeKicker: "The code",
-      codeTitle: "Garden formal",
+      leadWomenMark: "Ladies",
+      leadWomenText: ", please avoid black, red, white, and cream.",
+      leadMenMark: "Gentlemen",
+      leadMenText: ", formal attire is appreciated.",
+      codeKicker: "",
+      codeTitle: "",
       codeP1:
         "Think of the day in two chapters: the ceremony at Saint Anna, then celebration among the gardens and halls of Art Village. Long or midi dresses, tailored suits, and polished separates all feel at home, we love when you dress up a little, in whatever shape that takes for you.",
       codeP2:
@@ -517,20 +300,10 @@ export const figmaByLang = {
         "Small bag or clutch is plenty; you won't need to carry much once you're with us",
       paletteKicker: "Palette",
       paletteTitle: "Colours we're dreaming of",
-      paletteSub:
-        "Two gentle ranges below, pick what feels like you. They sit in the same garden, so everyone still photographs beautifully together.",
       forHer: "For her",
       forHim: "For him",
       womenAria: "Suggested colours for women",
       menAria: "Suggested colours for men",
-      whiteTeaseAria: "Note on wearing white",
-      whiteTeaseLabel: "A tiny rule, with humour",
-      whiteTeaseInline:
-        "Questions? Wear what makes you feel handsome, radiant, and ready to celebrate, if you're close to either palette above, you're already perfect.",
-      whiteTeaseBefore: "To the women joining us: white and ivory are on a ",
-      whiteTeaseEm: "very",
-      whiteTeaseAfter:
-        " exclusive guest list, it caps at two, and we already filled both seats. If your outfit could moonlight in a detergent ad or upstage us at the altar, please aim for literally any other colour. We promise we'll still gasp at how good you look, just not because you're wearing our signature shade.",
       paletteWomen: paletteWomenEn,
       paletteMen: paletteMenEn,
     },
@@ -579,22 +352,15 @@ export const figmaByLang = {
       hours: "Ժամ",
       mins: "Րոպե",
       chevronAria: "Սահեցնել դեպի պատմությունը",
+      coverAlt:
+        "Նկարազարդում՝ բաց երկնքի տակ հարսանեկան ընթրիք, երկար սեղան այգում, լույսերի շղթաներով",
     },
     story: {
       eyebrow: "Մեր ճանապարհը",
       heading: "Ինչպես գտանք և ընտրեցինք միմյանց։",
-      lead: "Ամեն ինչ սկսվեց ամենասովորական վայրում՝ գրասենյակային հանդիպման ժամանակ, և վերածվեց մի բանի, որին ոչ մեկս չէր սպասում, մինչև որ մի ծննդյան տարեդարձ փոխեց ամեն ինչ։",
-      t1Title: "Առաջին ողջույնը",
-      t1Meta: "Մարտի 28 · Մեր աշխատավայրը",
-      t1Body:
-        "Դա հերթական աշխատանքային հանդիպումն էր, մինչև որ զրույցը երկարեց, և մեր միջև եղած մասնագիտական սահմանը կամաց-կամաց վերածվեց հետաքրքրության, հետո՝ ընկերության, և վերջապես մի բանի, որը ոչ մի ծրագրով կամ օրացույցով նախատեսված չէր։",
-      t2Title: "Առաջարկությունը",
-      t2Meta: "Սեպտեմբերի 8 · Ծննդյան օրը",
-      t2Body:
-        "Առաջարկությունն արվեց այն օրը, որը, թվում էր, միայն տորթի ու մոմերի մասին է՝ ծննդյան տարեդարձի օրը, երբ ոչ ոք չէր սպասում մատանու կամ հատուկ խոսքի։ Այդ անկեղծ ու երջանիկ ակնթարթում հնչեց կարևոր հարցը. ոչ թե մեծ հանդիսավորությամբ, այլ իրական կյանքի հենց կենտրոնում, երբ սերն ամենաապահովն ու անսպասելին էր։",
+      lead:
+        "Ամեն ինչ սկսվեց ամենասովորական ձևով՝ գրասենյակում աշխատանքային հանդիպման ժամանակ, երբ զրույցը մի քիչ ավելի երկար տևեց, քան սովորաբար, և մասնագիտական սահմանը կամաց-կամաց դարձավ հետաքրքրություն, հետո՝ ընկերություն, և վերջապես մի բան, որին ոչ մեկս չէինք սպասում։ Այն, ինչ սկսվել էր որպես ամենօրյա, վերածվեց կապի, որ ծրագրով կամ օրացույցով հնարավոր չէր կանխատեսել, և բացվելով բնական ճանապարհով՝ մի պարզ, իրական կյանքի պահը ամեն ինչ դարձրեց համատեղ ապագա՝ անկեղծ, անսպասելի և խորապես մեր։",
       altPortrait: "Կարեն և Աննա",
-      altRome: "Կարենը և Աննան Հռոմում",
-      altCity: "Կարենը և Աննան քաղաքի ֆոնին",
     },
     events: {
       eyebrow: "Տոնակատարությունը",
@@ -615,9 +381,12 @@ export const figmaByLang = {
     attire: {
       eyebrow: "Դրես-կոդ",
       title: "Ինչ հագնել և որ գույներն ընտրել",
-      lead: "Այգու պաշտոնական ոճ (Garden formal)՝ բնության տարրերով։ Ընտրեք հարմարավետ, հետաքրքիր տեքստուրայով հագուստ և այնպիսի երանգներ, որոնք ներդաշնակ են քարին, բնությանը և մոմերի լույսին։",
-      codeKicker: "Ոճը",
-      codeTitle: "Այգու պաշտոնական ոճ",
+      leadWomenMark: "Կանայք",
+      leadWomenText: ", խնդրում ենք չհագնել սև, կարմիր, սպիտակ և կրեմ գույներ։",
+      leadMenMark: "Տղամարդիկ",
+      leadMenText: ", խորհուրդ ենք տալիս պաշտոնական հագուստ։",
+      codeKicker: "",
+      codeTitle: "",
       codeP1:
         "Մեր օրը բաղկացած է լինելու երկու մասից. պսակադրություն Սուրբ Աննա եկեղեցում, ապա տոնակատարություն Art Village-ի այգիներում և սրահներում։ Երկար կամ միդի զգեստները, նրբաճաշակ կոստյումներն ու համադրված հագուստները շատ տեղին կլինեն. մեզ դուր է գալիս, երբ դուք գեղեցիկ եք հագնվում՝ պահպանելով ձեր անհատական ոճը։",
       codeP2:
@@ -633,20 +402,10 @@ export const figmaByLang = {
       bullet5: "Փոքրիկ պայուսակը կամ կլատչը միանգամայն բավական են։",
       paletteKicker: "Գունապնակ",
       paletteTitle: "Գույներ, որոնք մենք պատկերացնում ենք",
-      paletteSub:
-        "Ստորև ներկայացված են երկու նուրբ գունաշարեր. ընտրեք այն, ինչը ձեզ ավելի հոգեհարազատ է։ Դրանք ներդաշնակ են բնությանը և հիանալի կդիտվեն ընդհանուր լուսանկարներում։",
       forHer: "Կանանց համար",
       forHim: "Տղամարդկանց համար",
       womenAria: "Առաջարկվող գույներ կանանց համար",
       menAria: "Առաջարկվող գույներ տղամարդկանց համար",
-      whiteTeaseAria: "Նշում սպիտակ գույնի մասին",
-      whiteTeaseLabel: "Մի փոքր կանոն՝ կատակով",
-      whiteTeaseInline:
-        "Հարցե՞ր ունեք։ Հագեք այն, ինչը ձեզ վստահ ու տոնական է դարձնում։ Եթե ձեր հագուստը մոտ է վերևում նշված գունապնակներից մեկին, ուրեմն դուք արդեն անթերի եք դիտվում։",
-      whiteTeaseBefore: "Մեզ միացող կանանց. սպիտակն ու փղոսկրագույնը (ivory) ",
-      whiteTeaseEm: "շատ",
-      whiteTeaseAfter:
-        " խիստ սահմանափակ են, և այդ երկու տեղերն արդեն զբաղված են (մեր կողմից): Եթե ձեր զգեստը կարող է մրցել հարսի զգեստի հետ, խնդրում ենք ընտրել ցանկացած այլ գույն։ Խոստանում ենք՝ մենք միևնույնն է կհիանանք ձեր տեսքով, պարզապես ոչ մեր գլխավոր գույնը կրելու պատճառով։",
       paletteWomen: paletteWomenHy,
       paletteMen: paletteMenHy,
     },
@@ -695,22 +454,15 @@ export const figmaByLang = {
       hours: "Часов",
       mins: "Минут",
       chevronAria: "Прокрутить к истории",
+      coverAlt:
+        "Иллюстрация: свадебный ужин на открытом воздухе, длинный стол в саду, гирлянды огней",
     },
     story: {
       eyebrow: "Наш путь",
       heading: "Как мы нашли и выбрали друг друга.",
-      lead: "Все началось в самом обычном месте — на встрече в офисе, и переросло в то, чего никто из нас не ожидал, пока один день рождения не изменил все.",
-      t1Title: "Первое приветствие",
-      t1Meta: "28 марта · Наша работа",
-      t1Body:
-        "Это была очередная рабочая встреча, но беседа затянулась, и профессиональная граница между нами постепенно сменилась интересом, затем дружбой, а в конце концов — тем, что не было предусмотрено ни в одной программе или календаре.",
-      t2Title: "Предложение",
-      t2Meta: "8 сентября · День рождения",
-      t2Body:
-        "Предложение было сделано в день, который, казалось бы, был только о торте и свечах — в день рождения, когда никто не ожидал кольца или особых слов. В это искреннее и счастливое мгновение прозвучал главный вопрос: не с большой помпой, а в самом центре реальной жизни, когда любовь была самой надежной и неожиданной.",
+      lead:
+        "Всё началось самым обыкновенным образом — на рабочей встрече в офисе, когда разговор затянулся чуть дольше обычного и профессиональная граница незаметно смягчилась в интерес, затем в дружбу и наконец в нечто такое, чего мы сами не ожидали. То, что казалось рутиной, переросло в связь, которую не предугадал бы ни план, ни календарь, и всё развивалось естественно, пока простой, настоящий жизненный миг не превратил всё в общее будущее — честное, неожиданное и по-настоящему наше.",
       altPortrait: "Карен и Анна",
-      altRome: "Карен и Анна в Риме",
-      altCity: "Карен и Анна на фоне города",
     },
     events: {
       eyebrow: "Торжество",
@@ -731,9 +483,12 @@ export const figmaByLang = {
     attire: {
       eyebrow: "Дресс-код",
       title: "Что надеть и какие цвета выбрать",
-      lead: "Формальный стиль сада (Garden formal) с элементами природы. Выбирайте удобную одежду с интересной текстурой и такие оттенки, которые гармонируют с камнем, природой и светом свечей.",
-      codeKicker: "Стиль",
-      codeTitle: "Формальный стиль сада",
+      leadWomenMark: "Дамы",
+      leadWomenText: ", просим избегать чёрного, красного, белого и кремового.",
+      leadMenMark: "Джентльмены",
+      leadMenText: ", будем признательны за формальный наряд.",
+      codeKicker: "",
+      codeTitle: "",
       codeP1:
         "Наш день будет состоять из двух частей: венчание в церкви Святой Анны, а затем торжество в садах и залах Art Village. Длинные платья или платья миди, элегантные костюмы и продуманные сочетания будут весьма уместны. Нам очень нравится, когда вы красиво наряжаетесь, сохраняя свой индивидуальный стиль.",
       codeP2:
@@ -749,20 +504,10 @@ export const figmaByLang = {
       bullet5: "Маленькой сумочки или клатча будет вполне достаточно.",
       paletteKicker: "Палитра",
       paletteTitle: "Цвета, о которых мы мечтаем",
-      paletteSub:
-        "Ниже представлены две нежные цветовые гаммы: выберите ту, которая вам ближе по духу. Они гармонируют с природой и будут отлично смотреться на общих фотографиях.",
       forHer: "Для нее",
       forHim: "Для него",
       womenAria: "Рекомендуемые цвета для женщин",
       menAria: "Рекомендуемые цвета для мужчин",
-      whiteTeaseAria: "Заметка о белом цвете",
-      whiteTeaseLabel: "Маленькое правило в шутку",
-      whiteTeaseInline:
-        "Есть вопросы? Надевайте то, в чем вы чувствуете себя уверенно и празднично. Если ваш наряд близок к одной из палитр выше — вы уже выглядите безупречно.",
-      whiteTeaseBefore: "Милые дамы, белый цвет и цвет слоновой кости (ivory) ",
-      whiteTeaseEm: "очень",
-      whiteTeaseAfter:
-        " строго ограничены, и эти два места уже заняты (нами). Если ваше платье может составить конкуренцию платью невесты, пожалуйста, выберите любой другой цвет. Обещаем, мы всё равно будем восхищаться вашим внешним видом, просто не потому, что вы в нашем главном цвете.",
       paletteWomen: paletteWomenRu,
       paletteMen: paletteMenRu,
     },
