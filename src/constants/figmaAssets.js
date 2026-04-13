@@ -1,7 +1,7 @@
 /** Local + remote imagery (story photos in /public; church map: Wikimedia; reception: Art Village). */
 export const figmaAssets = {
   /** Hero: outdoor reception illustration (orchard) */
-  heroInvitationCover: "/outdoor-wedding-reception-orchard.png",
+  heroInvitationCover: "/outdoor-wedding-reception-orchard-copy.png",
   /** Our Journey: couple portrait */
   storyPhotoPortrait: "/IMG_2365%202.JPG",
   /** Katoghike / Saint Anna Church, Abovyan St, Yerevan (Wikimedia Commons) */

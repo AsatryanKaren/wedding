@@ -1121,6 +1121,12 @@
   .eventCards {
     grid-template-columns: 1fr 1fr;
   }
+
+  /* Ceremony only (no full mode): one card, centered like a single column */
+  .eventCardsSingle {
+    grid-template-columns: minmax(0, 640px);
+    justify-content: center;
+  }
 }
 
 .eventCard {

@@ -59,6 +59,9 @@ export default function FigmaInvite() {
   const activeNavId = useActiveNavSection(88);
 
   const motion = reducedMotion ? "reduce" : "full";
+  const navIds = hasSpecialAccess
+    ? NAV_IDS
+    : NAV_IDS.filter((item) => item.id !== "schedule");
 
   return (
     <div className={styles.page} data-motion={motion}>
@@ -81,7 +84,7 @@ export default function FigmaInvite() {
         <div className={styles.topNavRight}>
           <nav aria-label={f.nav.ariaLabel}>
             <ul className={styles.navLinks}>
-              {NAV_IDS.map(({ id, key }) => (
+              {navIds.map(({ id, key }) => (
                 <li key={id}>
                   <a
                     className={activeNavId === id ? styles.active : undefined}
@@ -200,7 +203,9 @@ export default function FigmaInvite() {
               <h2 className={styles.eventsTitle}>{f.events.title}</h2>
             </header>
           </Reveal>
-          <div className={styles.eventCards}>
+          <div
+            className={`${styles.eventCards} ${!hasSpecialAccess ? styles.eventCardsSingle : ""}`.trim()}
+          >
             <Reveal reducedMotion={reducedMotion}>
               <article className={styles.eventCard}>
                 <div className={styles.eventCardTop}>
@@ -422,64 +427,68 @@ export default function FigmaInvite() {
         </div>
       </section>
 
-      <section
-        id="schedule"
-        className={styles.schedule}
-        aria-labelledby="schedule-heading"
-      >
-        <div className={styles.scheduleInner}>
-          <Reveal reducedMotion={reducedMotion}>
-            <header className={styles.scheduleHeader}>
-              <p className={styles.scheduleEyebrow}>{f.schedule.eyebrow}</p>
-              <h2 id="schedule-heading" className={styles.scheduleTitle}>
-                {f.schedule.title}
-              </h2>
-              <p className={styles.scheduleSub}>{f.schedule.sub}</p>
-            </header>
-          </Reveal>
-          <div className={styles.scheduleFlow}>
-            <div className={styles.scheduleTrack}>
-              <ScheduleVine className={styles.scheduleVine} />
-              <ol className={styles.scheduleList}>
-                {f.schedule.rows.map((row, i) => {
-                  const side =
-                    i % 2 === 0
-                      ? styles.scheduleItemStart
-                      : styles.scheduleItemEnd;
-                  return (
-                    <Reveal
-                      key={row.datetime + row.title}
-                      as="li"
-                      className={`${styles.scheduleItem} ${side}`.trim()}
-                      reducedMotion={reducedMotion}
-                      delayMs={i * 36}
-                    >
-                      <div className={styles.scheduleRow}>
-                        <time
-                          className={styles.scheduleTime}
-                          dateTime={row.datetime}
-                        >
-                          <span className={styles.scheduleTimeInner}>
-                            {row.time}
-                          </span>
-                        </time>
-                        <div className={styles.scheduleCard}>
-                          <h3 className={styles.scheduleCardTitle}>
-                            {row.title}
-                          </h3>
-                          <p className={styles.schedulePlace}>{row.place}</p>
-                          <p className={styles.scheduleDetail}>{row.detail}</p>
-                          <span className={styles.scheduleTag}>{row.tag}</span>
+      {hasSpecialAccess && (
+        <section
+          id="schedule"
+          className={styles.schedule}
+          aria-labelledby="schedule-heading"
+        >
+          <div className={styles.scheduleInner}>
+            <Reveal reducedMotion={reducedMotion}>
+              <header className={styles.scheduleHeader}>
+                <p className={styles.scheduleEyebrow}>{f.schedule.eyebrow}</p>
+                <h2 id="schedule-heading" className={styles.scheduleTitle}>
+                  {f.schedule.title}
+                </h2>
+                <p className={styles.scheduleSub}>{f.schedule.sub}</p>
+              </header>
+            </Reveal>
+            <div className={styles.scheduleFlow}>
+              <div className={styles.scheduleTrack}>
+                <ScheduleVine className={styles.scheduleVine} />
+                <ol className={styles.scheduleList}>
+                  {f.schedule.rows.map((row, i) => {
+                    const side =
+                      i % 2 === 0
+                        ? styles.scheduleItemStart
+                        : styles.scheduleItemEnd;
+                    return (
+                      <Reveal
+                        key={row.datetime + row.title}
+                        as="li"
+                        className={`${styles.scheduleItem} ${side}`.trim()}
+                        reducedMotion={reducedMotion}
+                        delayMs={i * 36}
+                      >
+                        <div className={styles.scheduleRow}>
+                          <time
+                            className={styles.scheduleTime}
+                            dateTime={row.datetime}
+                          >
+                            <span className={styles.scheduleTimeInner}>
+                              {row.time}
+                            </span>
+                          </time>
+                          <div className={styles.scheduleCard}>
+                            <h3 className={styles.scheduleCardTitle}>
+                              {row.title}
+                            </h3>
+                            <p className={styles.schedulePlace}>{row.place}</p>
+                            <p className={styles.scheduleDetail}>
+                              {row.detail}
+                            </p>
+                            <span className={styles.scheduleTag}>{row.tag}</span>
+                          </div>
                         </div>
-                      </div>
-                    </Reveal>
-                  );
-                })}
-              </ol>
+                      </Reveal>
+                    );
+                  })}
+                </ol>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       <section
         id="roots"
@@ -521,7 +530,7 @@ export default function FigmaInvite() {
         <footer className={styles.footer}>
           <p className={styles.footerNames}>{f.footer.names}</p>
           <ul className={styles.footerLinks}>
-            {NAV_IDS.map(({ id, key }) => (
+            {navIds.map(({ id, key }) => (
               <li key={id}>
                 <a href={`#${id}`}>{f.nav[key]}</a>
               </li>
